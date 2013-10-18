@@ -91,6 +91,7 @@ function weather(startHour, hoursOnARoad, callback) {
 
         result.icon = parsed_json['hourly_forecast'][worstWeather]['icon_url'];
         result.endHour = parsed_json['hourly_forecast'][offset + hoursOnARoad]['FCTTIME']['hour'];
+        result.startHour = startHour;
 
         callback(result);
     } });

@@ -30,6 +30,17 @@ $(document).ready(function () {
     var bikeLayer = new google.maps.BicyclingLayer();
     bikeLayer.setMap(map);
 
+    $('#hour').val(new Date().getHours() + 1);
+    $('#searchButton').click(function () {
+            weather($('#hour').val(), 2, function(result)
+            {
+                console.log(result);
+                $('#weather').html(result.message + "<img src='" + result.icon + "'/>");
+            })
+            return false;
+        }
+    )
+
 //    travelMode: TravelMode.BICYCLING
 
 });

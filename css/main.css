@@ -409,8 +409,35 @@ h1 {
 
 .logo {
     height: 70px;
+
 }
 
 .station{
     font-weight: bold;
+}
+
+.labelText{
+    color: gray;
+    font-size: 13px;
+}
+
+div#answerHeader{
+
+}
+
+header .title{
+    font-size:  56px;
+    text-shadow:
+        -1px -1px 0 #eee,
+        1px -1px 0 #eee,
+        -1px 1px 0 #eee,
+        1px 1px 0 #eee;
+}
+
+img.logo{
+    vertical-align: baseline;
+}
+
+p{
+    margin: 0.5em 0;
 }

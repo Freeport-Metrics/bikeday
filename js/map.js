@@ -21,6 +21,26 @@ var mapOptions = {
     }
 };
 
+var markers =
+{
+    startWalk: new google.maps.Marker({
+        map: map,
+        icon: 'img/start-walk.png'
+    }),
+    startBike: new google.maps.Marker({
+        map: map,
+        icon: 'img/start-bike.png'
+    }),
+    stopBike: new google.maps.Marker({
+        map: map,
+        icon: 'img/stop-bike.png'
+    }),
+    stopWalk: new google.maps.Marker({
+        map: map,
+        icon: 'img/stop-walk.png'
+    })
+};
+
 
 var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 var bikeLayer = new google.maps.BicyclingLayer();
@@ -38,9 +58,9 @@ var rendererFromStationOptions = new google.maps.Polyline({
 });
 
 var directionsService = new google.maps.DirectionsService();
-var directionsDisplayWalkToStation = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererWalkToStationsOptions});
-var directionsDisplayWalkFromStation = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererFromStationOptions});
-var directionsDisplayBike = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererBikingOptions});
+var directionsDisplayWalkToStation = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererWalkToStationsOptions, markerOptions: {visible: false}});
+var directionsDisplayWalkFromStation = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererFromStationOptions, markerOptions: {visible: false}});
+var directionsDisplayBike = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererBikingOptions, markerOptions: {visible: false}});
 
 //function that calculate routes
 function calcRoute(from, fromStation, toStation, to) {
@@ -49,11 +69,10 @@ function calcRoute(from, fromStation, toStation, to) {
     directionsDisplayWalkFromStation.setMap(map);
     directionsDisplayBike.setMap(map);
 
-    var marker = new google.maps.Marker({
-        position: fromStation,
-        map: map,
-        icon: 'img/map-bike.png'
-    });
+    markers.startWalk.position = from;
+    markers.startBike.position = fromStation;
+    markers.stopBike.position = toStation;
+    markers.stopWalk.position = to;
 
     var bounds = new google.maps.LatLngBounds();
     bounds.extend(from);

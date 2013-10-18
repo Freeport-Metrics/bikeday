@@ -16,6 +16,8 @@
 
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript" src="js/weather.js"></script>
+        <script type="text/javascript" src="js/geocoder.js"></script>
+        <script type="text/javascript" src="js/veturilo.js"></script>
     </head>
     <body>
         <div id="map-canvas"></div>
@@ -35,10 +37,10 @@
                         <h3 class="title">Plan your ride</h3>
                         <form class="search-form" action="">
                             <p><label>From:
-                                <input id="from" type="text"/>
+                                <input id="from" type="text" value="Warszawa Młynarska 7"/>
                             </label></p>
                             <p><label>To:
-                                <input id="to" type="text"/>
+                                <input id="to" type="text" value="Warszawa Złota 1"/>
                             </label></p>
                             <p><label>When:
                                 <select id="hour">
@@ -68,15 +70,15 @@
                                     <option value="23">23:00</option>
                                 </select>
                             </label></p>
-                            <input type="submit" value="Is it a Bike day?" class="clearfix" />
+                            <input id="searchButton" type="submit" value="Is it a Bike day?" class="clearfix" />
                         </form>
                         <div class="results">
                             <h3 class="title">Here you go</h3>
-                            <p>Pick up a bike at []<br/>
-                                ([] <img src="img/bike.png" alt="bike"/> available, [] minutes <img src="img/walk.png" alt="bike"/>)</p>
-                            <p>Leave your bike at []<br/>
+                            <p>Pick up a bike at <span class="station" id="fromStation"></span><br/>
+                                (<span id="fromStationBikes"></span> <img src="img/bike.png" alt="bike"/> available, [] minutes <img src="img/walk.png" alt="bike"/>)</p>
+                            <p>Leave your bike at <span class="station" id="toStation"/></span><br/>
                                 ([] minutes <img src="img/walk.png" alt="bike"/> away from your destination)</p>
-                            <p>You should reach your destination at []</p>
+                            <p>You should reach your destination at </p>
                             <p>Be sure to take your [sunglasses / raincoat / gloves], since it's gonna be <img src="img/walk.png" alt="bike"/>!</p>
                         </div>
                     </aside>

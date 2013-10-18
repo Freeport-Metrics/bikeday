@@ -29,56 +29,85 @@ $(document).ready(function () {
 
 //EXAMPLE FROM https://developers.google.com/maps/documentation/javascript/directions#TravelModes
 
-var directionsService = new google.maps.DirectionsService();
-var directionsDisplay = new google.maps.DirectionsRenderer();
-directionsDisplay.setMap(map);
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsDisplay.setMap(map);
 
-function calcRoute(from, fromStation, toStation, to) {
+    function calcRoute(from, fromStation, toStation, to) {
 
-   from = new google.maps.LatLng(52.2329476, 21.012631199999987);
-   to = new google.maps.LatLng(52.2356499, 20.97239650000006);
-   fromStation = new google.maps.LatLng(52.233582929098, 21.0146221518517);
-   toStation = new google.maps.LatLng(52.236998797125, 20.9721708297729);
+        from = new google.maps.LatLng(52.2329476, 21.012631199999987);
+        to = new google.maps.LatLng(52.2356499, 20.97239650000006);
+        fromStation = new google.maps.LatLng(52.233582929098, 21.0146221518517);
+        toStation = new google.maps.LatLng(52.236998797125, 20.9721708297729);
 
-  var request = {
-    origin:from,
-    destination:toStation,
-    transitOptions: {
-        departureTime: new Date(1337675679473)
-    },
-    travelMode: google.maps.TravelMode.WALKING
+        var request = {
+            origin: from,
+            destination: toStation,
+            transitOptions: {
+                departureTime: new Date(1337675679473)
+            },
+            travelMode: google.maps.TravelMode.WALKING
 
-  };
-  
-  directionsService.route(request, function(result, status) {
-    console.log("Status", status);
-    if (status == google.maps.DirectionsStatus.OK) {
-      console.log("Set directions");
-      directionsDisplay.setDirections(result);
+        };
+
+        directionsService.route(request, function (result, status) {
+            console.log("Status", status);
+            if (status == google.maps.DirectionsStatus.OK) {
+                console.log("Set directions");
+                directionsDisplay.setDirections(result);
+            }
+            else {
+                console.error("Error", status)
+            }
+        });
     }
-    else {console.error("Error", status)}
-  });
-}
 
-  $(".search-form").submit(function(event) {
-    event.preventDefault();
-    calcRoute();
-  });
+    $(".search-form").submit(function (event) {
+        event.preventDefault();
+        calcRoute();
+    });
 
     var bikeLayer = new google.maps.BicyclingLayer();
     bikeLayer.setMap(map);
 
     $('#hour').val(new Date().getHours() + 1);
     $('#searchButton').click(function () {
-            weather($('#hour').val(), 2, function(result)
-            {
+            //weather
+            weather($('#hour').val(), 2, function (result) {
                 console.log(result);
                 $('#weather').html(result.message + "<img src='" + result.icon + "'/>");
             })
+            // locations
+            var from;
+            var fromStation;
+            var to;
+            var toStation;
+
+            geocode($('#from').val(), function (location) {
+                from = {location: location, lat: location.lat(), lng: location.lng()};
+                $("#resultFrom").text(location);
+                // translate to
+                console.log('from',from);
+                geocode($('#to').val(), function (location) {
+                    to = {location: location, lat: location.lat(), lng: location.lng()};
+                    $("#resultTo").text(location);
+                    console.log('to',to);
+                    // veturilo
+                    findStations(function (stations) {
+                        fromStation = findNearestStation(from, stations);
+                        console.log('fromStation', fromStation);
+                        $('#fromStation').text(fromStation.name);
+                        $('#fromStationBikes').text(fromStation.bikes);
+                        toStation = findNearestStation(to, stations);
+                        console.log('toStation',toStation);
+                        $('#toStation').text(toStation.name);
+                    });
+                });
+
+
+            });
             return false;
         }
     )
-
-//    travelMode: TravelMode.BICYCLING
 
 });

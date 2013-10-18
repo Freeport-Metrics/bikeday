@@ -350,6 +350,9 @@ h3 {
     float: right;
     width: 75%;
 }
+.search-form select{
+    float: right;
+}
 
 .search-form input[type="submit"] {
     width: 100%;
@@ -406,4 +409,8 @@ h1 {
 
 .logo {
     height: 70px;
+}
+
+.station{
+    font-weight: bold;
 }

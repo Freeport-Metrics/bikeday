@@ -357,6 +357,11 @@ h3 {
     margin-top: 3%;
 }
 
+.results {
+    border: solid #e44d26;
+    border-width: 0 2px 2px;
+}
+
 .results, .results h3 {
     padding: 0px 3% 10px;
     background-color: #fff;

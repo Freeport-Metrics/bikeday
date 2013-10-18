@@ -96,7 +96,9 @@ function calcRoute(from, fromStation, toStation, to) {
         else {
             console.error("Error", status)
         }
-
+        var duration = result.routes[0].legs[0].duration.value;
+        $("#toStationDuration").html(result.routes[0].legs[0].duration.text)
+        console.log("Walk to station:", result.routes[0].legs[0].duration);
         directionsService.route(requestBicycling, function (result, status) {
             console.log("Status", status);
             if (status == google.maps.DirectionsStatus.OK) {
@@ -106,7 +108,8 @@ function calcRoute(from, fromStation, toStation, to) {
             else {
                 console.error("Error", status)
             }
-
+            duration = duration + result.routes[0].legs[0].duration.value;
+            console.log("Biking duration:", result.routes[0].legs[0].duration);
             directionsService.route(requestFromStation, function (result, status) {
                 console.log("Status", status);
                 if (status == google.maps.DirectionsStatus.OK) {
@@ -116,7 +119,12 @@ function calcRoute(from, fromStation, toStation, to) {
                 else {
                     console.error("Error", status)
                 }
-
+                duration = duration + result.routes[0].legs[0].duration.value;
+                $("#toEndDuration").html(result.routes[0].legs[0].duration.text)
+                var endTime = (parseInt($('#hour').val(), 10)) + (duration / 3600) % 24;
+                $("#endTime").html(Math.ceil(endTime));
+                console.log("Total duration", duration);
+                console.log("Walk to end:", result.routes[0].legs[0].duration);
             });
         });
 

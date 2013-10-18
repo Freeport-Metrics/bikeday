@@ -1,7 +1,6 @@
 function weather(startHour, hoursOnARoad, callback) {
     $.ajax({ url: "http://api.wunderground.com/api/086afffe3fa8ba4d/hourly/q/Poland/Warsaw.json", dataType: "jsonp", success: function (parsed_json) {
         var temp_c = parsed_json['hourly_forecast'][0]['temp']['metric'];
-        var weatherDescription = parsed_json['hourly_forecast'][0]['condition'];
         var beginHour = parsed_json['hourly_forecast'][0]['FCTTIME']['hour'];
         var offset = startHour - beginHour;
         var x = "";
@@ -32,6 +31,7 @@ function weather(startHour, hoursOnARoad, callback) {
         conditions[23]="Clear";
         conditions[24]="Unknown";
         var currentJ = 100;
+        var worstWeather = 100;
         for (var i = offset; i < hoursOnARoad; i++)
         {
             for (j = 0; j < 25; ++j )
@@ -41,6 +41,7 @@ function weather(startHour, hoursOnARoad, callback) {
                     if (j < currentJ)
                     {
                         currentJ = j;
+                        worstWeather = i;
                     }
                 }
             }
@@ -88,7 +89,7 @@ function weather(startHour, hoursOnARoad, callback) {
             result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It will be great weather during your trip";
         }
 
-        result.icon = parsed_json['hourly_forecast'][currentJ]['icon_url'];
+        result.icon = parsed_json['hourly_forecast'][worstWeather]['icon_url'];
 
         callback(result);
     } });

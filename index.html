@@ -70,16 +70,16 @@
                                     <option value="23">23:00</option>
                                 </select>
                             </label></p>
-                            <input id="searchButton" type="submit" value="Is it a Bike day?" class="clearfix" />
+                            <input type="submit" value="Is it a Bike day?" class="clearfix" id="searchButton"/>
                         </form>
                         <div class="results">
                             <h3 class="title">Here you go</h3>
-                            <p>Pick up a bike at <span class="station" id="fromStation"></span><br/>
-                                (<span id="fromStationBikes"></span> <img src="img/bike.png" alt="bike"/> available, [] minutes <img src="img/walk.png" alt="bike"/>)</p>
-                            <p>Leave your bike at <span class="station" id="toStation"/></span><br/>
+                            <p>Pick up a bike at []<br/>
+                                ([] <img src="img/bike.png" alt="bike"/> available, [] minutes <img src="img/walk.png" alt="bike"/>)</p>
+                            <p>Leave your bike at []<br/>
                                 ([] minutes <img src="img/walk.png" alt="bike"/> away from your destination)</p>
-                            <p>You should reach your destination at </p>
-                            <p>Be sure to take your [sunglasses / raincoat / gloves], since it's gonna be <img src="img/walk.png" alt="bike"/>!</p>
+                            <p>You should reach your destination at []</p>
+                            <p id="weather"></p>
                         </div>
                     </aside>
 

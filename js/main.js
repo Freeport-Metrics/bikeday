@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-    $('#hour').val(new Date().getHours() + 1);
+    $('#hour').val((new Date().getHours() + 1)%24);
     $('#searchButton').click(function () {
             weather($('#hour').val(), 2, function(result)
             {

@@ -3,10 +3,19 @@ $(document).ready(function () {
 
     $('#hour').val(new Date().getHours() + 1);
     $('#searchButton').click(function () {
-            weather($('#hour').val(), 2, function (result) {
+            weather($('#hour').val(), 2, function(result)
+            {
                 console.log(result);
+                endHour = result.endHour;
                 $('#weather').html(result.message + "<img src='" + result.icon + "'/>");
-            });
+                sunsetSunrise(endHour, function(result)
+                {
+                    if ((endHour > result.sunsetHour && endHour < 24) || (endHour < result.sunsetHour && endHour < result.sunriseHour))
+                    {
+                        $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
+                    }
+                })
+            })
             // locations
             var from;
             var fromStation;

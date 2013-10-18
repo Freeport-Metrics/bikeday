@@ -27,20 +27,21 @@ var bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
 
-    var rendererWalkToStationsOptions = new google.maps.Polyline({
-        strokeColor: "#00FF00"
-    });
-    var rendererBikingOptions = new google.maps.Polyline({
-        strokeColor: "#FF0000"
-    });
-    var rendererFromStationOptions = new google.maps.Polyline({
-        strokeColor: "#0000FF"
-    });
+var rendererWalkToStationsOptions = new google.maps.Polyline({
+    strokeColor: "#00FF00"
+});
+var rendererBikingOptions = new google.maps.Polyline({
+    strokeColor: "#FF0000"
+});
+var rendererFromStationOptions = new google.maps.Polyline({
+    strokeColor: "#0000FF"
+});
 
-    var directionsService = new google.maps.DirectionsService();
-    var directionsDisplayWalkToStation = new google.maps.DirectionsRenderer({polylineOptions: rendererWalkToStationsOptions});
-    var directionsDisplayWalkFromStation = new google.maps.DirectionsRenderer({polylineOptions: rendererFromStationOptions});
-    var directionsDisplayBike = new google.maps.DirectionsRenderer({polylineOptions: rendererBikingOptions});
+var directionsService = new google.maps.DirectionsService();
+var directionsDisplayWalkToStation = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererWalkToStationsOptions});
+var directionsDisplayWalkFromStation = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererFromStationOptions});
+var directionsDisplayBike = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererBikingOptions});
+
 //function that calculate routes
 function calcRoute(from, fromStation, toStation, to) {
 
@@ -59,66 +60,73 @@ function calcRoute(from, fromStation, toStation, to) {
     bounds.extend(to);
     bounds.extend(fromStation);
     bounds.extend(toStation);
+    console.log("Bounding to ", bounds);
+
+    map.panToBounds(bounds);
+    map.fitBounds(bounds);
+
 
     var requestToStation = {
-        origin:from,
-        destination:fromStation,
+        origin: from,
+        destination: fromStation,
         transitOptions: {
             departureTime: new Date(1337675679473)
         },
         travelMode: google.maps.TravelMode.WALKING
     };
 
-    directionsService.route(requestToStation, function(result, status) {
-        console.log("Status", status);
-        if (status == google.maps.DirectionsStatus.OK) {
-            console.log("Set directions");
-            directionsDisplayWalkToStation.setDirections(result);
-        }
-        else {console.error("Error", status)}
-    });
-
     var requestBicycling = {
-        origin:fromStation,
-        destination:toStation,
+        origin: fromStation,
+        destination: toStation,
         transitOptions: {
             departureTime: new Date(1337675679473)
         },
         travelMode: google.maps.TravelMode.BICYCLING
     };
 
-    directionsService.route(requestBicycling, function(result, status) {
-        console.log("Status", status);
-        if (status == google.maps.DirectionsStatus.OK) {
-            console.log("Set bicycling directions");
-            directionsDisplayBike.setDirections(result);
-        }
-        else {console.error("Error", status)}
-    });
-
-
     var requestFromStation = {
-        origin:toStation,
-        destination:to,
+        origin: toStation,
+        destination: to,
         transitOptions: {
             departureTime: new Date(1337675679473)
         },
         travelMode: google.maps.TravelMode.WALKING
     };
 
-    map.fitBounds(bounds);
-    map.panToBounds(bounds);
-    console.log("Bounding to ", bounds);
-
-    directionsService.route(requestFromStation, function(result, status) {
+    directionsService.route(requestToStation, function (result, status) {
         console.log("Status", status);
         if (status == google.maps.DirectionsStatus.OK) {
             console.log("Set directions");
-            directionsDisplayWalkFromStation.setDirections(result);
+            directionsDisplayWalkToStation.setDirections(result);
         }
-        else {console.error("Error", status)}
-    });
+        else {
+            console.error("Error", status)
+        }
 
+        directionsService.route(requestBicycling, function (result, status) {
+            console.log("Status", status);
+            if (status == google.maps.DirectionsStatus.OK) {
+                console.log("Set bicycling directions");
+                directionsDisplayBike.setDirections(result);
+            }
+            else {
+                console.error("Error", status)
+            }
+
+            directionsService.route(requestFromStation, function (result, status) {
+                console.log("Status", status);
+                if (status == google.maps.DirectionsStatus.OK) {
+                    console.log("Set directions");
+                    directionsDisplayWalkFromStation.setDirections(result);
+                }
+                else {
+                    console.error("Error", status)
+                }
+
+            });
+        });
+
+    });
 
 
 }

@@ -148,8 +148,31 @@ function calcRoute(from, fromStation, toStation, to) {
                 $("#toEndDuration").html(result.routes[0].legs[0].duration.text)
                 var endTime = (parseInt($('#hour').val(), 10)) + (duration / 3600) % 24;
                 $("#endTime").html(Math.ceil(endTime));
+
                 console.log("Total duration", duration);
                 console.log("Walk to end:", result.routes[0].legs[0].duration);
+
+                weather($('#hour').val(), Math.ceil(duration / 3600), function(result)
+                {
+                console.log("Result", result);
+                endHour = result.endHour;
+                startHour = result.startHour;
+                $('#weather').html(result.message + "<img src='" + result.icon + "'/>");
+                sunsetSunrise(endHour, function(result)
+                {
+                  $('#sunsetSunrise').html("");
+                    if ((startHour > result.sunsetHour && startHour < 24) || 
+                      (startHour < result.sunsetHour && 
+                        (startHour >= 0 && startHour < result.sunriseHour)))
+                    {
+                        $('#sunsetSunrise').html("You will be biking in the dark, after sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
+                    }
+                    else
+                    {
+                        $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
+                    }
+                })
+            })
             });
         });
 

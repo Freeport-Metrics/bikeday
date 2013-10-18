@@ -39,22 +39,23 @@ To: <input id="to" name="to" value="Młynarska 7, Warszawa"/>
 
         // translate from
         geocode($('#from').val(), function (location) {
-            var from = {location: location, lat: location.lat(), lng: location.lng()};
+            from = {location: location, lat: location.lat(), lng: location.lng()};
             $("#resultFrom").text(location);
             // translate to
-            console.log(from);
+            console.log('from',from);
             geocode($('#to').val(), function (location) {
-                var to = {location: location, lat: location.lat(), lng: location.lng()};
+                to = {location: location, lat: location.lat(), lng: location.lng()};
                 $("#resultTo").text(location);
-                console.log(to);
+                console.log('to',to);
+                // veturilo
+                findStations(function (stations) {
+                    fromStation = findNearestStation(from, stations);
+                    console.log('fromStation', fromStation);
+                    toStation = findNearestStation(to, stations);
+                    console.log('toStation',toStation);
+                });
             });
-            // veturilo
-            findStations(function (stations) {
-                fromStation = findNearestStation(from, stations);
-                console.log(fromStation);
-//                toStation = findNearestStation(to, stations);
-//                console.log(toStation);
-            });
+
 
         });
 

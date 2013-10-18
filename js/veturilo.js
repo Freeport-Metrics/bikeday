@@ -11,7 +11,7 @@ function findStations(callback) {
                     name: place.attr('name'),
                     lat: place.attr('lat'),
                     lng: place.attr('lng'),
-                    bikes: place.attr('lng'),
+                    bikes: place.attr('bikes'),
                     racks: place.attr('bike_racks')
                 };
                 stations.push(station);
@@ -21,12 +21,11 @@ function findStations(callback) {
     });
 }
 
-var distanceSquare = function(pointA, pointB) {
+var distanceSquare = function (pointA, pointB) {
     var x = pointA.lat - pointB.lat;
     var y = pointA.lng - pointB.lng;
     return (x * x) + (y * y);
 }
-
 
 
 function findNearestStation(point, stations) {
@@ -34,7 +33,7 @@ function findNearestStation(point, stations) {
     var smallestDistanceSquare;
     $.each(stations, function (i, station) {
         var distance = distanceSquare(point, station);
-        if ((nearest == null) || (smallestDistanceSquare > distance)) {
+        if ((nearest == null) || ((smallestDistanceSquare > distance) && (stations.bikes != '0'))) {
             nearest = station;
             smallestDistanceSquare = distance;
         }

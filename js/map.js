@@ -20,6 +20,7 @@ var mapOptions = {
         position: google.maps.ControlPosition.RIGHT_TOP
     }
 };
+var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 var markers =
 {
@@ -42,7 +43,7 @@ var markers =
 };
 
 
-var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
 var bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 

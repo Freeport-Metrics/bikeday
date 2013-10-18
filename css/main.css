@@ -77,14 +77,12 @@ body {
     /*border-bottom: 20px solid #e44d26;*/
 }
 
-.footer-container,
-.main aside {
+aside {
     border-top: 20px solid #e44d26;
 }
 
 /*.header-container,*/
-.footer-container,
-.main aside {
+aside {
     background: #f16529;
 }
 
@@ -140,8 +138,9 @@ nav a:hover {
     font-size: 2em;
 }
 
-.main aside {
+aside {
     color: white;
+    margin-left: 3%;
     /*padding: 0px 2% 10px;*/
 }
 
@@ -348,6 +347,7 @@ h3 {
 
 .search-form input[type="text"] {
     float: right;
+    width: 75%;
 }
 
 .search-form input[type="submit"] {
@@ -375,4 +375,20 @@ h3 {
 
 h1 {
     font-size: 2.5em;
+}
+
+#map-canvas {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: -200px;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+#content {
+    z-index: 100;
+    position: absolute;
+    width: 320px;
 }

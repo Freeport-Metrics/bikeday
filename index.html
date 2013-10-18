@@ -13,61 +13,67 @@
         <!--[if lt IE 9]>
             <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
         <![endif]-->
+
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     </head>
     <body>
+        <div id="map-canvas"></div>
 
-        <div class="header-container">
-            <header class="wrapper clearfix">
-                <h1 class="title">Bikeday</h1>
-            </header>
+        <div id="content">
+            <div class="header-container">
+                <header class="wrapper clearfix">
+                    <h1 class="title">Bikeday</h1>
+                </header>
+            </div>
+
+            <div class="main-container">
+                <!--<div class="main wrapper clearfix">-->
+
+                    <aside>
+                        <!--<h1 class="title">Bikeday</h1>-->
+                        <h3 class="title">Plan your ride</h3>
+                        <form class="search-form" action="">
+                            <p><label>From:
+                                <input type="text"/>
+                            </label></p>
+                            <p><label>To:
+                                <input type="text"/>
+                            </label></p>
+                            <p><label>When:
+                                <input type="text"/>
+                            </label></p>
+                            <input type="submit" value="Is it a Bike day?" class="clearfix"/>
+                        </form>
+                        <div class="results">
+                            <h3 class="title">Here you go</h3>
+                            <p>Pick up a bike at []<br/>
+                                ([] bike available, [] minutes walk)</p>
+                            <p>Leave your bike at []<br/>
+                                ([] minutes away from your destination)</p>
+                            <p>You should reach your destinatio at []</p>
+                            <p>Be sure to take your raincoat, since it's gonna rain!</p>
+                        </div>
+                    </aside>
+
+                    <!--<article>
+                        <header>
+                            <h1>article header h1</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
+                        </header>
+                        <section>
+                            <h2>article section h2</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+                        </section>
+                    </article>-->
+
+
+                <!--</div> &lt;!&ndash; #main &ndash;&gt;-->
+            </div> <!-- #main-container -->
         </div>
-
-        <div class="main-container">
-            <div class="main wrapper clearfix">
-
-                <aside>
-                    <!--<h1 class="title">Bikeday</h1>-->
-                    <h3 class="title">Plan your ride</h3>
-                    <form class="search-form" action="">
-                        <p><label>From:
-                            <input type="text"/>
-                        </label></p>
-                        <p><label>To:
-                            <input type="text"/>
-                        </label></p>
-                        <p><label>When:
-                            <input type="text"/>
-                        </label></p>
-                        <input type="submit" value="Is it a Bike day?" class="clearfix"/>
-                    </form>
-                    <div class="results">
-                        <h3 class="title">Here you go</h3>
-                        <p>Pick up a bike at []<br/>
-                            ([] bike available, [] minutes walk)</p>
-                        <p>Leave your bike at []<br/>
-                            ([] minutes away from your destination)</p>
-                        <p>You should reach your destinatio at []</p>
-                        <p>Be sure to take your raincoat, since it's gonna rain!</p>
-                    </div>
-                </aside>
-
-                <article>
-                    <header>
-                        <h1>article header h1</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
-                    </header>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                </article>
-
-
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
         <script src="js/main.js"></script>
     </body>

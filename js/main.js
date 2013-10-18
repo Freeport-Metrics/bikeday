@@ -11,11 +11,11 @@ $(document).ready(function () {
                 $('#weather').html(result.message + "<img src='" + result.icon + "'/>");
                 sunsetSunrise(endHour, function(result)
                 {
-                    if ((endHour > result.sunsetHour && endHour < 24 && startHour > result.sunsetHour) || (endHour < result.sunsetHour && endHour < result.sunriseHour && startHour > result.sunsetHour))
+                    if ((startHour > result.sunsetHour && startHour < 24) || (startHour < result.sunsetHour && (startHour >= 0 && startHour < result.sunriseHour)))
                     {
                         $('#sunsetSunrise').html("You will be biking in the dark, after sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
                     }
-                    else if ((endHour > result.sunsetHour && endHour < 24) || (endHour < result.sunsetHour && endHour < result.sunriseHour))
+                    else
                     {
                         $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
                     }

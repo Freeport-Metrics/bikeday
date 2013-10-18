@@ -16,11 +16,12 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script src="js/geocoder.js"></script>
+    <script src="js/veturilo.js"></script>
 
 </head>
 <body>
 From: <input id="from" name="from" value="Warszawa złota 1"/>
-To: <input id="to" name="to" value="Młynarska 7, Warszawa" />
+To: <input id="to" name="to" value="Młynarska 7, Warszawa"/>
 <input id="search" type="button" value="Search"/>
 
 <div id="resultFrom"></div>
@@ -29,24 +30,34 @@ To: <input id="to" name="to" value="Młynarska 7, Warszawa" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script src="js/main.js"></script>
 <script>
     $('#search').click(function () {
-        geocode($('#from').val(), function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                $("#resultFrom").text(results[0].geometry.location);
-            } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
+        var from;
+        var fromStation;
+        var to;
+        var toStation;
+
+        // translate from
+        geocode($('#from').val(), function (location) {
+            var from = {location: location, lat: location.lat(), lng: location.lng()};
+            $("#resultFrom").text(location);
+            // translate to
+            console.log(from);
+            geocode($('#to').val(), function (location) {
+                var to = {location: location, lat: location.lat(), lng: location.lng()};
+                $("#resultTo").text(location);
+                console.log(to);
+            });
+            // veturilo
+            findStations(function (stations) {
+                fromStation = findNearestStation(from, stations);
+                console.log(fromStation);
+//                toStation = findNearestStation(to, stations);
+//                console.log(toStation);
+            });
+
         });
 
-        geocode($('#to').val(), function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                $("#resultTo").text(results[0].geometry.location);
-            } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
-        });
     });
 </script>
 </body>

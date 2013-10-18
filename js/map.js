@@ -20,8 +20,9 @@ var mapOptions = {
         position: google.maps.ControlPosition.RIGHT_TOP
     }
 };
-var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
+var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+var bikeLayer = new google.maps.BicyclingLayer();
 var markers =
 {
     startWalk: new google.maps.Marker({
@@ -41,10 +42,6 @@ var markers =
         icon: 'img/stop-walk.png'
     })
 };
-
-
-
-var bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
 
@@ -70,10 +67,26 @@ function calcRoute(from, fromStation, toStation, to) {
     directionsDisplayWalkFromStation.setMap(map);
     directionsDisplayBike.setMap(map);
 
-    markers.startWalk.position = from;
-    markers.startBike.position = fromStation;
-    markers.stopBike.position = toStation;
-    markers.stopWalk.position = to;
+    new google.maps.Marker({
+        position: from,
+        map: map,
+        icon: 'img/start-walk.png'
+    });
+    new google.maps.Marker({
+        position: fromStation,
+        map: map,
+        icon: 'img/start-bike.png'
+    });
+    new google.maps.Marker({
+        position: toStation,
+        map: map,
+        icon: 'img/stop-bike.png'
+    });
+    new google.maps.Marker({
+        position: to,
+        map: map,
+        icon: 'img/stop-walk.png'
+    });
 
     var bounds = new google.maps.LatLngBounds();
     bounds.extend(from);

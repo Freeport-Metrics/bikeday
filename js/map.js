@@ -26,8 +26,6 @@ var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
 var bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
-//function that calculate routes
-function calcRoute(from, fromStation, toStation, to) {
 
     var rendererWalkToStationsOptions = new google.maps.Polyline({
         strokeColor: "#00FF00"
@@ -43,6 +41,9 @@ function calcRoute(from, fromStation, toStation, to) {
     var directionsDisplayWalkToStation = new google.maps.DirectionsRenderer({polylineOptions: rendererWalkToStationsOptions});
     var directionsDisplayWalkFromStation = new google.maps.DirectionsRenderer({polylineOptions: rendererFromStationOptions});
     var directionsDisplayBike = new google.maps.DirectionsRenderer({polylineOptions: rendererBikingOptions});
+
+//function that calculate routes
+function calcRoute(from, fromStation, toStation, to) {
 
     directionsDisplayWalkToStation.setMap(map);
     directionsDisplayWalkFromStation.setMap(map);
@@ -112,5 +113,7 @@ function calcRoute(from, fromStation, toStation, to) {
         }
         else {console.error("Error", status)}
     });
+
+
 
 }

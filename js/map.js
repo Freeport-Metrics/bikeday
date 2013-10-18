@@ -21,26 +21,6 @@ var mapOptions = {
     }
 };
 
-var markers =
-{
-    startWalk: new google.maps.Marker({
-        map: map,
-        icon: 'img/start-walk.png'
-    }),
-    startBike: new google.maps.Marker({
-        map: map,
-        icon: 'img/start-bike.png'
-    }),
-    stopBike: new google.maps.Marker({
-        map: map,
-        icon: 'img/stop-bike.png'
-    }),
-    stopWalk: new google.maps.Marker({
-        map: map,
-        icon: 'img/stop-walk.png'
-    })
-};
-
 
 var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 var bikeLayer = new google.maps.BicyclingLayer();
@@ -62,12 +42,42 @@ var directionsDisplayWalkToStation = new google.maps.DirectionsRenderer({preserv
 var directionsDisplayWalkFromStation = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererFromStationOptions, markerOptions: {visible: false}});
 var directionsDisplayBike = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererBikingOptions, markerOptions: {visible: false}});
 
+
+var markers =
+{
+    startWalk: new google.maps.Marker({
+        map: map,
+        icon: 'img/start-walk.png',
+        position: null
+    }),
+    startBike: new google.maps.Marker({
+        map: map,
+        icon: 'img/start-bike.png',
+        position: null
+
+    }),
+    stopBike: new google.maps.Marker({
+        map: map,
+        icon: 'img/stop-bike.png',
+        position: null
+
+    }),
+    stopWalk: new google.maps.Marker({
+        map: map,
+        icon: 'img/stop-walk.png',
+        position: null
+        
+    })
+};
+
+
 //function that calculate routes
 function calcRoute(from, fromStation, toStation, to) {
 
     directionsDisplayWalkToStation.setMap(map);
     directionsDisplayWalkFromStation.setMap(map);
     directionsDisplayBike.setMap(map);
+
 
     markers.startWalk.position = from;
     markers.startBike.position = fromStation;
@@ -84,6 +94,7 @@ function calcRoute(from, fromStation, toStation, to) {
     map.panToBounds(bounds);
     map.fitBounds(bounds);
 
+    console.log(markers);
 
     var requestToStation = {
         origin: from,

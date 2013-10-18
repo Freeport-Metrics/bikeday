@@ -26,4 +26,10 @@ $(document).ready(function () {
         }
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+    var bikeLayer = new google.maps.BicyclingLayer();
+    bikeLayer.setMap(map);
+
+//    travelMode: TravelMode.BICYCLING
+
 });

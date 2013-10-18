@@ -83,7 +83,7 @@ aside {
 
 /*.header-container,*/
 aside {
-    background: #f16529;
+    background: rgba(241,101,41, .8);
 }
 
 .title {
@@ -233,7 +233,8 @@ aside {
 
     .title {
         float: left;
-    }
+    
+}
 
     nav {
         float: right;
@@ -355,10 +356,15 @@ h3 {
     height: 50px;
     font-size: 1.5em;
     margin-top: 3%;
+
+    /*-webkit-border-radius: 8px;*/
+    /*border-radius: 8px;*/
+
 }
 
 .results {
-    border: solid #e44d26;
+    border-style: solid;
+    border-color: rgba(228,77,38, .8);
     border-width: 0 2px 2px;
 }
 
@@ -396,4 +402,8 @@ h1 {
     z-index: 100;
     position: absolute;
     width: 320px;
+}
+
+.logo {
+    height: 70px;
 }

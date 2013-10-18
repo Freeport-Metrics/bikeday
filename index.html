@@ -15,9 +15,6 @@
         <![endif]-->
 
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript" src="js/weather.js"></script>
-        <script type="text/javascript" src="js/geocoder.js"></script>
-        <script type="text/javascript" src="js/veturilo.js"></script>
     </head>
     <body>
         <div id="map-canvas"></div>
@@ -70,15 +67,15 @@
                                     <option value="23">23:00</option>
                                 </select>
                             </label></p>
-                            <input type="submit" value="Is it a Bike day?" class="clearfix" id="searchButton"/>
+                            <input type="button" value="Is it a Bike day?" class="clearfix" id="searchButton"/>
                         </form>
                         <div class="results">
                             <h3 class="title">Here you go</h3>
-                            <p>Pick up a bike at []<br/>
+                            <p>Pick up a bike at <span class="station" id="fromStation"></span><br/>
                                 ([] <img src="img/bike.png" alt="bike"/> available, [] minutes <img src="img/walk.png" alt="bike"/>)</p>
-                            <p>Leave your bike at []<br/>
+                            <p>Leave your bike at <span class="station" id="toStation"/></span><br/>
                                 ([] minutes <img src="img/walk.png" alt="bike"/> away from your destination)</p>
-                            <p>You should reach your destination at []</p>
+                            <p>You should reach your destination at </p>
                             <p id="weather"></p>
                         </div>
                     </aside>
@@ -90,7 +87,10 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-        <script src="js/main.js"></script>
         <script src="js/map.js"></script>
+        <script src="js/weather.js"></script>
+        <script src="js/geocoder.js"></script>
+        <script src="js/veturilo.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

@@ -27,7 +27,6 @@ $(document).ready(function () {
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-
 //EXAMPLE FROM https://developers.google.com/maps/documentation/javascript/directions#TravelModes
 
 var directionsService = new google.maps.DirectionsService();
@@ -65,5 +64,9 @@ function calcRoute(from, fromStation, toStation, to) {
     event.preventDefault();
     calcRoute();
   });
+
+    var bikeLayer = new google.maps.BicyclingLayer();
+    bikeLayer.setMap(map);
+
 
 });

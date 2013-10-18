@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<markers>
+    <country lat="52.2345" lng="21.0024" zoom="11" name="VETURILO Poland" hotline="+48223821312" domain="vp">
+        <city uid="210" lat="52.2324" lng="21.0127" zoom="11" maps_icon="veturilo" alias="" break="0" name="Warszawa">
+            <place uid="155801" lat="52.2302702962812" lng="21.0127580165863" name="Al. Jerozolimskie, rejon rotundy"
+                   spot="1" number="6310" bikes="5+" bike_racks="28" bike_numbers="62106,64535,63307,60491,64337"/>
+            <place uid="155806" lat="52.2314251871654" lng="21.0213263332844" name="ul. Nowy Świat - Rondo de Gaulle'a"
+                   spot="1" number="6311" bikes="5+" bike_racks="21" bike_numbers="63743,62791,60521,60997,60778"/>
+            <place uid="155812" lat="52.2384442403821" lng="21.0067820549011" name="ul. Marszałkowska - ul. Królewska"
+                   spot="1" number="6307" bikes="2" bike_racks="15" bike_numbers="64347,63498"/>
+            <place uid="155814" lat="52.2392852038878" lng="21.016674041748"
+                   name="ul. Traugutta - ul. Krakowskie Przedmieście" spot="1" number="6323" bikes="5+" bike_racks="24"
+                   bike_numbers="63092,63258,64978,64824,63509"/>
+            <place uid="155822" lat="52.2441204348081" lng="21.002254486084" name="pl. Bankowy" spot="1" number="6304"
+                   bikes="1" bike_racks="18" bike_numbers="64234"/>
+            <place uid="155826" lat="52.2419590991457" lng="20.9929203987122"
+                   name="al. Jana Pawła II - al. Solidarności" spot="1" number="6318" bikes="2" bike_racks="21"
+                   bike_numbers="62853,64596"/>
+            <place uid="155829" lat="52.2471159113839" lng="20.988564491272" name="al. Jana Pawła II - ul. Anielewicza"
+                   spot="1" number="6326" bikes="5+" bike_racks="21" bike_numbers="64991,60962,64351,63209,60809"/>
+            <place uid="155831" lat="52.2357142841819" lng="20.9968096017838" name="ul. Grzybowska - Al. Jana Pawła II"
+                   spot="1" number="6320" bikes="4" bike_racks="21" bike_numbers="63531,63279,62797,63582"/>
+            <place uid="155835" lat="52.2488032412975" lng="21.0055442154408"
+                   name="ul. Bonifraterska - Plac Krasińskich" spot="1" number="6315" bikes="5+" bike_racks="15"
+                   bike_numbers="64460,62730,64833,62965,62632"/>
+            <place uid="155837" lat="52.2375474140858" lng="21.0257023572922" name="ul. Topiel - ul. Tamka" spot="1"
+                   number="6313" bikes="3" bike_racks="22" bike_numbers="64274,63023,60841"/>
+            <place uid="155848" lat="52.2576707266444" lng="20.9945404529572"
+                   name="ul. Słomińskiego - Metro Dw. Gdański" spot="1" number="6300" bikes="5+" bike_racks="20"
+                   bike_numbers="64881,64924,64793,64443,62719"/>
+            <place uid="155859" lat="52.2541078541912" lng="20.998107790947" name="ul. Andersa - ul. Muranowska"
+                   spot="1" number="6301" bikes="3" bike_racks="21" bike_numbers="63402,60399,60796"/>
+            <place uid="155866" lat="52.2513854297334" lng="20.9857535362244" name="al. Jana Pawła II - ul. Stawki"
+                   spot="1" number="6321" bikes="5+" bike_racks="21" bike_numbers="60470,64480,63642,63744,60680"/>
+            <place uid="155876" lat="52.2339303592781" lng="21.0300153493881" name="Al. 3-go Maja, rejon Dw. Powiśle"
+                   spot="1" number="6312" bikes="5+" bike_racks="26" bike_numbers="60438,64510,60270,60346,63943"/>
+            <place uid="155894" lat="52.2385263664265" lng="20.9958225488663" name="al. Jana Pawła II - pl. Mirowski"
+                   spot="1" number="6319" bikes="5+" bike_racks="15" bike_numbers="64736,60978,64731,62754,63173"/>
+            <place uid="155895" lat="52.2417817204202" lng="21.0036814212799" name="ul. Marszałkowska - pl. Bankowy"
+                   spot="1" number="6306" bikes="3" bike_racks="18" bike_numbers="64289,63029,60293"/>
+            <place uid="155911" lat="52.2337233799238" lng="21.0202950239182" name="ul. Gałczyńskiego - ul. Foksal"
+                   spot="1" number="6327" bikes="2" bike_racks="21" bike_numbers="61005,62657"/>
+            <place uid="155918" lat="52.2429001799685" lng="21.0234358906746" name="BUW - ul. Gęsta/ul. Dobra" spot="1"
+                   number="6325" bikes="5+" bike_racks="15" bike_numbers="64348,64324,64279,63792,62475"/>
+            <place uid="155919" lat="52.2540980025342" lng="21.0093247890472" name="ul. Kościelna - Nowe Miasto"
+                   spot="1" number="6328" bikes="5+" bike_racks="24" bike_numbers="62690,63746,64264,64985,60852"/>
+            <place uid="155922" lat="52.2319853723492" lng="21.016224771738" name="ul. Bracka - ul. Krucza" spot="1"
+                   number="6309" bikes="5+" bike_racks="18" bike_numbers="63883,63050,64790,64239,62979"/>
+            <place uid="155925" lat="52.2435751837645" lng="21.0013747215271" name="pl. Bankowy, rejon Ratusza" spot="1"
+                   number="6303" bikes="5+" bike_racks="18" bike_numbers="63321,64377,64316,64648,60820"/>
+            <place uid="155929" lat="52.2451583640612" lng="21.0009026527405"
+                   name="ul. Andersa, rejon Pl. Bankowego i ul. Długiej" spot="1" number="6305" bikes="5+"
+                   bike_racks="20" bike_numbers="64711,64584,60476,64338,64726"/>
+            <place uid="155930" lat="52.2492605746532" lng="20.9971931576729" name="ul. Anielewicza - ul. Andersa"
+                   spot="1" number="6317" bikes="5+" bike_racks="18" bike_numbers="64303,63583,63320,60675,63764"/>
+            <place uid="155933" lat="52.2382980556469" lng="21.018294095993" name="ul. Oboźna - ul. Kopernika" spot="1"
+                   number="6314" bikes="5+" bike_racks="15" bike_numbers="63783,63959,60692,60408,60720"/>
+            <place uid="155935" lat="52.2413382705045" lng="21.0281056165695"
+                   name="Wybrzeże Kościuszkowskie - Centrum Nauki Kopernik" spot="1" number="6329" bikes="5+"
+                   bike_racks="13" bike_numbers="62821,63193,63798,60979,64996"/>
+            <place uid="155942" lat="52.2346498514297" lng="21.0340976715088" name="ul. Solec przy Al.3-go Maja"
+                   spot="1" number="6330" bikes="5+" bike_racks="24" bike_numbers="64334,62836,62782,63475,60919"/>
+            <place uid="155948" lat="52.2460254762151" lng="21.013251543045" name="ul. Miodowa" spot="1" number="6316"
+                   bikes="5+" bike_racks="24" bike_numbers="99960,60999,63991,62025,60312"/>
+            <place uid="155972" lat="52.3126307298567" lng="20.9178936481476" name="UKSW - ul. Wóycickiego 1" spot="1"
+                   number="63511" bikes="0" bike_racks="25"/>
+            <place uid="155973" lat="52.3125782570109" lng="20.9176898002625" name="UKSW - ul. Wóycickiego" spot="1"
+                   number="6351" bikes="5+" bike_racks="24" bike_numbers="60676,60556,64807,64446,60753"/>
+            <place uid="155975" lat="52.2951013398688" lng="20.9594786167145" name="UKSW II" spot="1" number="6352"
+                   bikes="4" bike_racks="21" bike_numbers="63557,63280,63060,63719"/>
+            <place uid="155983" lat="52.2845948136796" lng="20.9583842754364" name="AWF II" spot="1" number="6354"
+                   bikes="5+" bike_racks="24" bike_numbers="63462,63937,60862,60936,62739"/>
+            <place uid="155985" lat="52.2817790875867" lng="20.9494417905807" name="Metro Stare Bielany ul. Kasprowicza"
+                   spot="1" number="63311" bikes="5+" bike_racks="18" bike_numbers="63579,60752,64968,63528,64537"/>
+            <place uid="155987" lat="52.2815953043721" lng="20.949854850769" name="Metro Stare Bielany ul. Kasprowicza"
+                   spot="1" number="6331" bikes="5+" bike_racks="18" bike_numbers="60748,60264,63287,60906,63802"/>
+            <place uid="155989" lat="52.2761405340983" lng="20.9605407714844" name="Metro Słodowiec" spot="1"
+                   number="63321" bikes="5+" bike_racks="21" bike_numbers="61025,63167,60651,60369,63043"/>
+            <place uid="155990" lat="52.2760716067128" lng="20.9617102146149" name="Metro Słodowiec" spot="1"
+                   number="6332" bikes="4" bike_racks="21" bike_numbers="63044,62101,63708,60842"/>
+            <place uid="155996" lat="52.2768232376509" lng="20.9479880332947"
+                   name="Urząd Dzielnicy Bielany - ul. Żeromskiego" spot="1" number="6335" bikes="5+" bike_racks="21"
+                   bike_numbers="64408,64759,60418,62889,62752"/>
+            <place uid="155997" lat="52.2700482522007" lng="20.9525585174561"
+                   name="ul. Broniewskiego - ul. Perzyńskiego" spot="1" number="6336" bikes="5+" bike_racks="16"
+                   bike_numbers="63898,63828,60889,60610,62880"/>
+            <place uid="155998" lat="52.2710396180402" lng="20.930580496788" name="ul. Conrada" spot="1" number="6337"
+                   bikes="5+" bike_racks="21" bike_numbers="62904,64808,63007,64942,64900"/>
+            <place uid="156004" lat="52.1621525855968" lng="21.0280680656433" name="Metro Ursynów - ul. Beli Bartoka"
+                   spot="1" number="63381" bikes="1" bike_racks="20" bike_numbers="63904"/>
+            <place uid="156005" lat="52.1622513061534" lng="21.0280895233154" name="Metro Ursynów - ul. Beli Bartoka 1"
+                   spot="1" number="6338" bikes="1" bike_racks="20" bike_numbers="64923"/>
+            <place uid="156007" lat="52.1617741547678" lng="21.0278052091599" name="Metro Ursynów - ul. Beli Bartoka"
+                   spot="1" number="63391" bikes="4" bike_racks="20" bike_numbers="60873,64570,62882,63750"/>
+            <place uid="156008" lat="52.1617692186922" lng="21.0276791453362" name="Metro Ursynów - ul. Beli Bartoka 2"
+                   spot="1" number="6339" bikes="3" bike_racks="14" bike_numbers="62014,63408,60914"/>
+            <place uid="156012" lat="52.156887171951" lng="21.0337328910828"
+                   name="Metro Stokłosy - Al. Komisji Edukacji Narodowej 1" spot="1" number="6340" bikes="5+"
+                   bike_racks="21" bike_numbers="63316,62743,62785,60818,63623"/>
+            <place uid="156016" lat="52.1572557711822" lng="21.0439360141754" name="SGGW II" spot="1" number="6342"
+                   bikes="5+" bike_racks="21" bike_numbers="62695,60669,64260,64918,64474"/>
+            <place uid="156019" lat="52.1427217636099" lng="21.0448050498962" name="ul. Dereniowa - ul. Płaskowickiej"
+                   spot="1" number="6343" bikes="5+" bike_racks="20" bike_numbers="64295,60775,63814,63205,61046"/>
+            <place uid="156020" lat="52.1492051326616" lng="21.0454595088959" name="Metro Imielin - Ratusz Ursynów"
+                   spot="1" number="6344" bikes="2" bike_racks="10" bike_numbers="62968,63541"/>
+            <place uid="156022" lat="52.142706949043" lng="21.0383999347687" name="ul. Pileckiego - ul. Alternatywy"
+                   spot="1" number="6345" bikes="2" bike_racks="20" bike_numbers="63482,62401"/>
+            <place uid="156023" lat="52.1494684635744" lng="21.0332715511322" name="ul. Ciszewskiego - ul. Pileckiego"
+                   spot="1" number="6346" bikes="5+" bike_racks="20" bike_numbers="64959,62894,63463,60896,64301"/>
+            <place uid="156024" lat="52.1520885213144" lng="21.0181519389153" name="ul. Puławska - ul. Pileckiego"
+                   spot="1" number="6347" bikes="2" bike_racks="15" bike_numbers="63256,63496"/>
+            <place uid="156026" lat="52.1557303429351" lng="21.0233715176582" name="ul. Romera - ul. Pieciolinii"
+                   spot="1" number="6348" bikes="4" bike_racks="16" bike_numbers="60379,60783,64730,62714"/>
+            <place uid="156029" lat="52.1548532391624" lng="21.0493111610413" name="ul. Rosoła - ul. Gandhi" spot="1"
+                   number="6349" bikes="5+" bike_racks="20" bike_numbers="64865,60885,63603,60822,62648"/>
+            <place uid="156030" lat="52.1522218241503" lng="21.056374758482" name="ul. Rosoła - ul. Wesoła" spot="1"
+                   number="6350" bikes="3" bike_racks="21" bike_numbers="61019,64558,63995"/>
+            <place uid="156817" lat="52.1601386384411" lng="21.071594953537" name="ul. Ks. Hlonda" spot="1"
+                   number="6355" bikes="5+" bike_racks="16" bike_numbers="63600,64695,60398,64769,63907"/>
+            <place uid="156880" lat="52.244573710696" lng="20.9999907016754" name="Metro Ratusz Arsenał Południowy"
+                   spot="1" number="6302" bikes="4" bike_racks="15" bike_numbers="62693,62733,60362,64588"/>
+            <place uid="156882" lat="52.2396728301384" lng="21.0119506716728" name="ul. Królewska- Plac Małachowskiego"
+                   spot="1" number="6308" bikes="5+" bike_racks="15" bike_numbers="62825,60563,60574,63302,62746"/>
+            <place uid="156899" lat="52.2281575731872" lng="21.017923951149" name="ul. Krucza - ul. Wspólna" spot="1"
+                   number="6322" bikes="5+" bike_racks="21" bike_numbers="63569,63385,62108,64707,63555"/>
+            <place uid="164133" lat="52.2392917738525" lng="21.0167706012726"
+                   name="ul. Traugutta - ul. Krakowskie Przedmieście" spot="1" number="63231" bikes="4" bike_racks="24"
+                   bike_numbers="64525,60961,63858,62634"/>
+            <place uid="164138" lat="52.2392786339222" lng="21.0168939828873"
+                   name="ul. Traugutta - ul. Krakowskie Przedmieście" spot="1" number="63232" bikes="4" bike_racks="24"
+                   bike_numbers="63695,63594,60341,62058"/>
+            <place uid="164466" lat="52.1633503802262" lng="21.0374557971954" name="SGGW I" spot="1" number="6341"
+                   bikes="5+" bike_racks="20" bike_numbers="64440,63275,62638,62631,62116"/>
+            <place uid="171094" lat="52.1654299910244" lng="21.0839921236038" name="ul. Przyczółkowa - Al. Wilanowska "
+                   spot="1" number="6356" bikes="5+" bike_racks="16" bike_numbers="62026,63134,63807,63862,60434"/>
+            <place uid="187671" lat="52.2559960480504" lng="20.9833288192749" name="Arkadia" spot="1" number="6357"
+                   bikes="5+" bike_racks="35" bike_numbers="60813,63478,64688,63337,63239"/>
+            <place uid="203448" lat="52.2280425698225" lng="21.0049796104431"
+                   name="Al. Jerozolimskie/ul.E. Plater (Mariott)" spot="1" number="6358" bikes="5+" bike_racks="20"
+                   bike_numbers="64371,62021,64380,60271,63652"/>
+            <place uid="203449" lat="52.2197549718331" lng="21.0119211673737" name="Plac Politechniki-ul. Nowowiejska"
+                   spot="1" number="6359" bikes="5+" bike_racks="26" bike_numbers="60668,63917,60911,64405,60287"/>
+            <place uid="203450" lat="52.2199094336799" lng="21.0256862640381"
+                   name="Trasa Armii Ludowej, rejon Placu na Rozdrożu" spot="1" number="6360" bikes="5+" bike_racks="25"
+                   bike_numbers="60489,63770,60483,60865,63424"/>
+            <place uid="203451" lat="52.2173886806455" lng="21.0140991210938"
+                   name="Metro Politechnika-Rondo Jazdy Polskiej" spot="1" number="6361" bikes="3" bike_racks="20"
+                   bike_numbers="63305,63940,64357"/>
+            <place uid="203452" lat="52.2278355630154" lng="21.0236987471581" name="Plac Trzech Krzyży" spot="1"
+                   number="6362" bikes="5+" bike_racks="25" bike_numbers="63055,63683,60455,60407,63540"/>
+            <place uid="203454" lat="52.2228933996631" lng="21.0157929360867" name="Plac Konstytucji" spot="1"
+                   number="6363" bikes="5+" bike_racks="25" bike_numbers="64671,64585,62698,62085,62816"/>
+            <place uid="203456" lat="52.2197311452238" lng="21.0157366096973"
+                   name="ul. Waryńskiego-ul. Nowowiejska-Metro Politechnika" spot="1" number="6364" bikes="2"
+                   bike_racks="14" bike_numbers="64561,63348"/>
+            <place uid="203457" lat="52.2328609555591" lng="21.0102179646492" name="ul. Marszałkowska, rejon ul. Złotej"
+                   spot="1" number="6365" bikes="4" bike_racks="20" bike_numbers="64886,63851,63548,64861"/>
+            <place uid="203458" lat="52.2225935332893" lng="21.0081821680069" name="ul. Noakowskiego-ul.Koszykowa"
+                   spot="1" number="6366" bikes="5+" bike_racks="20" bike_numbers="60471,64336,64693,60920,60828"/>
+            <place uid="203459" lat="52.2293330547814" lng="21.0113243758678" name="ul. Marszałkowska-Al. Jerozolimskie"
+                   spot="1" number="6367" bikes="5+" bike_racks="20" bike_numbers="64616,60794,60639,63620,64870"/>
+            <place uid="203461" lat="52.2522869024143" lng="21.030345261097"
+                   name="ul. Floriańska- rejon Bazyliki Św. Floriana" spot="1" number="6369" bikes="2" bike_racks="20"
+                   bike_numbers="64890,64270"/>
+            <place uid="203462" lat="52.1732687893359" lng="21.0257036983967"
+                   name="ul. Wałbrzyska Al. KEN - Metro Służew" spot="1" number="6370" bikes="5+" bike_racks="20"
+                   bike_numbers="64232,64386,62627,64468,64439"/>
+            <place uid="203464" lat="52.2614138972103" lng="21.0155662894249"
+                   name="ul. Wybrzeże Helskie- Zoo- Wejście PN" spot="1" number="6371" bikes="5+" bike_racks="14"
+                   bike_numbers="64262,62989,63952,60575,64540"/>
+            <place uid="203465" lat="52.2527548728121" lng="21.051068007946" name="ul. Kijowska-Dworzec Wschodni"
+                   spot="1" number="6372" bikes="5+" bike_racks="18" bike_numbers="63435,60908,63861,60693,60299"/>
+            <place uid="203466" lat="52.2471881681893" lng="21.0476079583168"
+                   name="Aleja Zieleniecka - Teatr Powszechny" spot="1" number="6373" bikes="1" bike_racks="12"
+                   bike_numbers="63026"/>
+            <place uid="203467" lat="52.2386479126934" lng="21.0507220029831"
+                   name="Rondo Waszyngtona - Stadion Narodowy" spot="1" number="6374" bikes="5+" bike_racks="20"
+                   bike_numbers="63019,60397,62043,62830,63588"/>
+            <place uid="203468" lat="52.2300189433596" lng="21.0109367966652" name="Al. Jerozolimskie- Metro Centrum"
+                   spot="1" number="6375" bikes="5+" bike_racks="30" bike_numbers="63518,60807,63527,60967,64842"/>
+            <place uid="203469" lat="52.2197533286191" lng="21.0174143314362"
+                   name="Plac Zbawiciela- Nowowiejska- Mokotowska" spot="1" number="6376" bikes="5+" bike_racks="12"
+                   bike_numbers="64306,60848,64742,60440,63890"/>
+            <place uid="203475" lat="52.2249024521354" lng="21.0032790899277" name="Oczki- Akademia Medyczna" spot="1"
+                   number="6378" bikes="5+" bike_racks="18" bike_numbers="64508,60880,62991,63729,64607"/>
+            <place uid="203477" lat="52.2248486430822" lng="20.9897929430008" name="Al. Jerozolimskie- Plac Zawiszy"
+                   spot="1" number="6379" bikes="5+" bike_racks="24" bike_numbers="63335,63161,64999,64690,60857"/>
+            <place uid="203478" lat="52.2165242956221" lng="20.987851023674" name="ul. Raszyńska- Pomnik Lotnika"
+                   spot="1" number="6380" bikes="5+" bike_racks="12" bike_numbers="64719,64227,63530,60313,64772"/>
+            <place uid="203480" lat="52.2235070924771" lng="21.0128907859325"
+                   name="ul. Poznańska- Zespół Szkół Gastronomicznych" spot="1" number="6381" bikes="3" bike_racks="18"
+                   bike_numbers="63448,63542,64340"/>
+            <place uid="203481" lat="52.236405823263" lng="21.0073480010033"
+                   name="ul. Marszałkowska- Metro Świętokrzyska" spot="1" number="6382" bikes="5+" bike_racks="30"
+                   bike_numbers="64837,64729,60993,60975,60625"/>
+            <place uid="203486" lat="52.2536193735626" lng="21.0329148173332" name="Al. Solidarności- LO Władysława IV"
+                   spot="1" number="6383" bikes="5+" bike_racks="18" bike_numbers="63651,64410,62644,60996,63880"/>
+            <place uid="203487" lat="52.2538878333302" lng="21.0232776403427" name="ul. Ratuszowa- ZOO- wejście PD"
+                   spot="1" number="6384" bikes="5+" bike_racks="18" bike_numbers="63622,64266,60579,63018,64926"/>
+            <place uid="203488" lat="52.261350692786" lng="21.0305269807577" name="Pl. Hallera- Dąbrowszczaków" spot="1"
+                   number="6385" bikes="3" bike_racks="28" bike_numbers="63380,62621,60417"/>
+            <place uid="203489" lat="52.2362029619652" lng="21.0613261163235" name="ul. Walecznych- Peszteńska" spot="1"
+                   number="6386" bikes="5+" bike_racks="12" bike_numbers="63756,64835,60268,64519,64635"/>
+            <place uid="203490" lat="52.2347820855907" lng="21.0535758733749" name="ul. Francuska- Walecznych" spot="1"
+                   number="6387" bikes="5+" bike_racks="15" bike_numbers="60426,62851,60960,60297,64314"/>
+            <place uid="203491" lat="52.2417948596094" lng="21.0241627693176" name="ul. Lipowa- Dobra" spot="1"
+                   number="6388" bikes="5+" bike_racks="20" bike_numbers="60986,63104,60303,60698,63747"/>
+            <place uid="203492" lat="52.2358481577903" lng="21.0038611292839" name="Pl. Grzybowski- Próżna" spot="1"
+                   number="6389" bikes="5+" bike_racks="24" bike_numbers="60810,62763,63366,64869,64745"/>
+            <place uid="203493" lat="52.2131660166141" lng="21.0211506485939" name="Pl. Unii Lubelskiej- Puławska"
+                   spot="1" number="6390" bikes="5+" bike_racks="24" bike_numbers="60711,64575,62001,62907,60941"/>
+            <place uid="203495" lat="52.2220669137432" lng="21.0343900322914"
+                   name="ul. Myśliwiecka- LO Stefana Batorego" spot="1" number="6391" bikes="5+" bike_racks="20"
+                   bike_numbers="63159,62074,64421,60677,60570"/>
+            <place uid="203496" lat="52.2175784815684" lng="21.0092067718506" name="Al. Armii Ludowej- Budynek FOCUS"
+                   spot="1" number="6392" bikes="5+" bike_racks="20" bike_numbers="64356,60279,60267,63567,60770"/>
+            <place uid="203509" lat="52.2632262662726" lng="21.0213196277618" name="Rondo Starzyńskiego" spot="1"
+                   number="6393" bikes="4" bike_racks="24" bike_numbers="62682,60894,61001,60331"/>
+            <place uid="203513" lat="52.233626460688" lng="21.0028767585754" name="ul. Emilii Plater- Świętokrzyska"
+                   spot="1" number="6394" bikes="5+" bike_racks="24" bike_numbers="62669,63393,64857,60998,63062"/>
+            <place uid="203516" lat="52.2288147295567" lng="21.0056394338608"
+                   name="ul. Emilii Plater- Al. Jerozolimskie" spot="1" number="6395" bikes="5+" bike_racks="30"
+                   bike_numbers="64798,64346,62645,60351,60670"/>
+            <place uid="203521" lat="52.2261273092844" lng="20.996181294322" name="ul. Lindleya- Al. Jerozolimskie"
+                   spot="1" number="6396" bikes="3" bike_racks="14" bike_numbers="64472,60994,61050"/>
+            <place uid="203523" lat="52.2179128907448" lng="20.9828272461891" name="ul. Grójecka- Pl. Narutowicza"
+                   spot="1" number="6397" bikes="5+" bike_racks="30" bike_numbers="63470,64423,64654,64455,60806"/>
+            <place uid="203524" lat="52.2178948146374" lng="20.977586209774" name="ul. Białobrzeska- Kopińska" spot="1"
+                   number="6398" bikes="5+" bike_racks="15" bike_numbers="60627,60571,62680,62939,63172"/>
+            <place uid="203525" lat="52.2505529059047" lng="21.0531440377235"
+                   name="ul. Lubelska- Dw. Warszawa Wschodnia" spot="1" number="6399" bikes="5+" bike_racks="15"
+                   bike_numbers="60662,62096,60609,62896,62994"/>
+            <place uid="203527" lat="52.2361068694479" lng="21.0219204425812" name="ul. Ordynacka- Okólnik" spot="1"
+                   number="6401" bikes="5+" bike_racks="20" bike_numbers="64246,62831,62877,63970,64657"/>
+            <place uid="203528" lat="52.2435612239359" lng="21.0141634941101"
+                   name="ul. Trębacka- Krakowskie Przedmieście" spot="1" number="6402" bikes="5+" bike_racks="12"
+                   bike_numbers="60537,60791,60734,64623,61016"/>
+            <place uid="203529" lat="52.2355898552819" lng="21.0181452333927" name="ul. Warecka- Nowy Świat" spot="1"
+                   number="6403" bikes="1" bike_racks="28" bike_numbers="62031"/>
+            <place uid="203530" lat="52.2237921651029" lng="21.0209012031555" name="ul. Mokotowska- Nowy Świat" spot="1"
+                   number="6404" bikes="5+" bike_racks="20" bike_numbers="63344,64631,63950,64828,62920"/>
+            <place uid="203531" lat="52.1311303278832" lng="21.0655975341797" name="ul. Wąwozowa- Al. KEN- Metro Kabaty"
+                   spot="1" number="6405" bikes="5+" bike_racks="20" bike_numbers="62711,62987,64247,63785,60837"/>
+            <place uid="203532" lat="52.1402575395535" lng="21.0569125413895"
+                   name="Al. Komisji Edukacji Narodowej- Metro Natolin" spot="1" number="6406" bikes="5+"
+                   bike_racks="20" bike_numbers="60760,63930,60793,62652,60970"/>
+            <place uid="203533" lat="52.2345611475481" lng="20.9905050694942" name="ul. Grzybowska- Żelazna" spot="1"
+                   number="6407" bikes="5+" bike_racks="20" bike_numbers="60345,62044,60449,63189,62112"/>
+            <place uid="203534" lat="52.2558745493" lng="21.0098960995674"
+                   name="ul. Wybrzeże Gdańskie- Sanguszki- Skwer 1 Dywizji Pancernej" spot="1" number="6408" bikes="5+"
+                   bike_racks="30" bike_numbers="64355,64489,60448,60907,64236"/>
+            <place uid="203535" lat="52.2713235647674" lng="20.972903072834" name="ul. Słowackiego- Metro Marymont"
+                   spot="1" number="6409" bikes="5+" bike_racks="21" bike_numbers="64288,60877,60805,62922,64263"/>
+            <place uid="203536" lat="52.2623069578896" lng="20.980281829834" name="Al. Jana Pawła II- Plac Grunwaldzki"
+                   spot="1" number="6410" bikes="5+" bike_racks="30" bike_numbers="63556,64673,64763,63506,63896"/>
+            <place uid="203537" lat="52.2644525283227" lng="20.989648103714" name="Plac Inwalidów" spot="1"
+                   number="6411" bikes="5+" bike_racks="12" bike_numbers="64329,60587,60641,64244,64723"/>
+            <place uid="203539" lat="52.2298176957136" lng="20.993977189064"
+                   name="ul. Żelazna- Sienna                                          " spot="1" number="6412" bikes="4"
+                   bike_racks="24" bike_numbers="63053,60787,63535,60535"/>
+            <place uid="203540" lat="52.2401409335974" lng="20.9878054261208"
+                   name="Al. Solidarności- Urząd Dzielnicy Wola" spot="1" number="6413" bikes="5+" bike_racks="12"
+                   bike_numbers="63031,64749,63956,60403,64903"/>
+            <place uid="203542" lat="52.2248880756772" lng="21.026930809021" name="ul. Matejki-Wiejska" spot="1"
+                   number="6414" bikes="5+" bike_racks="20" bike_numbers="64831,60965,62665,63676,64819"/>
+            <place uid="203543" lat="52.2373429154426" lng="20.9888648986816" name="ul. Chłodna-Żelazna" spot="1"
+                   number="6415" bikes="5+" bike_racks="14" bike_numbers="63808,60256,61018,63277,63616"/>
+            <place uid="203545" lat="52.1743988442479" lng="21.0128492116928" name="Al. Lotników- Modzelewskiego"
+                   spot="1" number="6416" bikes="5+" bike_racks="24" bike_numbers="64912,60382,63589,60621,60251"/>
+            <place uid="203546" lat="52.1800618456735" lng="21.0208381712437" name="Al. Niepodległości- Wilanowska"
+                   spot="1" number="6417" bikes="5+" bike_racks="20" bike_numbers="62964,64312,62076,60469,62879"/>
+            <place uid="203547" lat="52.233582929098" lng="21.0146221518517" name="ul. Górskiego- Szpitalna" spot="1"
+                   number="6418" bikes="3" bike_racks="18" bike_numbers="64500,62047,63489"/>
+            <place uid="203550" lat="52.2901699484755" lng="20.9503228962421" name="ul. Marymoncka- Dewajtis" spot="1"
+                   number="6421" bikes="5+" bike_racks="30" bike_numbers="63517,60722,60766,60581,63070"/>
+            <place uid="203551" lat="52.2669131580297" lng="21.0585889220238" name="ul. Radzymińska- Piotra Skargi"
+                   spot="1" number="6422" bikes="5+" bike_racks="20" bike_numbers="62966,63893,60980,60348,60971"/>
+            <place uid="203552" lat="52.2107081575222" lng="20.9847718477249"
+                   name="ul. Stefana Banacha- Uniwesytet Warszawski" spot="1" number="6423" bikes="5+" bike_racks="20"
+                   bike_numbers="62649,62656,64910,62998,63749"/>
+            <place uid="203553" lat="52.212984414159" lng="20.9820520877838" name="ul. Pasteura- Winnicka- UW" spot="1"
+                   number="6424" bikes="0" bike_racks="20"/>
+            <place uid="203554" lat="52.2583939383885" lng="21.035398542881" name="ul. Stalowa- ul. 11-go Listopada"
+                   spot="1" number="6425" bikes="4" bike_racks="20" bike_numbers="60339,60843,62674,62952"/>
+            <place uid="203555" lat="52.2910164938151" lng="20.9297356009483" name="Metro Młociny" spot="1"
+                   number="6426" bikes="5+" bike_racks="20" bike_numbers="60871,60492,60446,61033,64930"/>
+            <place uid="203610" lat="52.2546234211875" lng="21.0441935062408" name="Fabryka Wódek Koneser" spot="1"
+                   number="6419" bikes="5+" bike_racks="24" bike_numbers="63315,60291,60890,63646,60646"/>
+            <place uid="204182" lat="52.2277731322015" lng="21.0438823699951" name="Port Czerniakowski" spot="1"
+                   number="6428" bikes="5+" bike_racks="15" bike_numbers="63934,62713,64718,60958,64841"/>
+            <place uid="205095" lat="52.2101312681819" lng="20.9753251075745"
+                   name="ul. Grójecka- Bitwy Warszawskiej 1920 roku" spot="1" number="6427" bikes="5+" bike_racks="15"
+                   bike_numbers="64905,63554,64979,64318,61009"/>
+            <place uid="207615" lat="52.2240468393878" lng="20.9975177049637"
+                   name="ul. Lindleya-Szpital Kliniczny Dzieciątka Jezus" spot="1" number="6377" bikes="5+"
+                   bike_racks="30" bike_numbers="63996,63108,63042,64980,62640"/>
+            <place uid="208154" lat="52.2197615446886" lng="21.0115993022919" name="Plac Politechniki-ul. Nowowiejska 1"
+                   spot="1" number="63591" bikes="5+" bike_racks="24" bike_numbers="64680,63921,64541,63025,60354"/>
+            <place uid="210320" lat="52.2099077420935" lng="21.0068035125732" name="Al. Niepodległości - Batorego"
+                   spot="1" number="6420" bikes="5+" bike_racks="20" bike_numbers="63732,61036,60411,60795,60769"/>
+            <place uid="211084" lat="52.2300813710155" lng="21.0302916169167" name="ul. Książęca- Rozbrat" spot="1"
+                   number="6400" bikes="5+" bike_racks="15" bike_numbers="64633,64593,64904,60433,60353"/>
+            <place uid="211182" lat="52.2577790860223" lng="20.9947228431702"
+                   name="ul. Słomińskiego - Metro Dw. Gdański 1" spot="1" number="63001" bikes="5+" bike_racks="14"
+                   bike_numbers="60391,60683,64550,64591,60553"/>
+            <place uid="212365" lat="52.2505052857261" lng="21.0311365127563"
+                   name="ul. Sierakowskiego- ul. Kłopotowskiego" spot="1" number="6368" bikes="5+" bike_racks="16"
+                   bike_numbers="63226,64892,64587,64359,60584"/>
+            <place uid="214514" lat="52.2678487852581" lng="21.0019540786743" name="KS Spójnia" spot="1" number="6429"
+                   bikes="5+" bike_racks="15" bike_numbers="64854,64987,60277,63838,64762"/>
+            <place uid="216201" lat="52.3210600127435" lng="20.971288383007" name="Produkcyjna - Modlińska " spot="1"
+                   number="6430" bikes="4" bike_racks="16" bike_numbers="63655,60592,62917,60589"/>
+            <place uid="216202" lat="52.332500346975" lng="20.9407916665077" name="Hanki Ordonówny" spot="1"
+                   number="6431" bikes="5+" bike_racks="14" bike_numbers="64354,60694,60776,60319,64276"/>
+            <place uid="216203" lat="52.3127553526162" lng="20.9660768508911"
+                   name="Myśliborska - Trasa Mostu Marii Skłodowskiej-Curie" spot="1" number="6432" bikes="5+"
+                   bike_racks="15" bike_numbers="60954,63769,60330,60441,62972"/>
+            <place uid="216204" lat="52.3151067215466" lng="21.061145067215" name="Skarbka z Gór" spot="1" number="6433"
+                   bikes="5+" bike_racks="14" bike_numbers="63563,60864,62732,63534,63292"/>
+            <place uid="216205" lat="52.2693555960244" lng="20.9834897518158" name="Plac Wilsona" spot="1" number="6434"
+                   bikes="5+" bike_racks="15" bike_numbers="63702,64600,64753,64746,63575"/>
+            <place uid="216206" lat="52.2777438861252" lng="20.9857776761055" name="Potocka" spot="1" number="6435"
+                   bikes="5+" bike_racks="15" bike_numbers="63546,60630,62681,64799,61003"/>
+            <place uid="216207" lat="52.2672184701377" lng="20.9623968601227" name="Broniewskiego - Włościańska"
+                   spot="1" number="6436" bikes="5+" bike_racks="15" bike_numbers="64810,60859,61048,60336,60474"/>
+            <place uid="216208" lat="52.1559985719703" lng="20.9962141513824" name="Poleczki - Business Park" spot="1"
+                   number="6437" bikes="0" bike_racks="15"/>
+            <place uid="216209" lat="52.2835315535238" lng="21.07213139534" name="ul. Blokowa- DK Zacisze" spot="1"
+                   number="6438" bikes="5+" bike_racks="16" bike_numbers="60394,63261,60467,60927,63202"/>
+            <place uid="216210" lat="52.2939628704402" lng="21.0273116827011" name="ul. Rembielińska - Kondratowicza"
+                   spot="1" number="6439" bikes="5+" bike_racks="20" bike_numbers="64300,63725,62069,64783,62725"/>
+            <place uid="216212" lat="52.2689928499649" lng="21.0380083322525" name="Rondo Żaba - ul. Św. Wincentego"
+                   spot="1" number="6440" bikes="5+" bike_racks="20" bike_numbers="60558,60308,60401,63570,60738"/>
+            <place uid="216213" lat="52.272290283051" lng="21.0499119758606" name="ul. Kołowa - Teatr Rampa" spot="1"
+                   number="6441" bikes="5+" bike_racks="12" bike_numbers="64250,60320,60740,64839,60618"/>
+            <place uid="216214" lat="52.291630065015" lng="21.0489892959595"
+                   name="ul. Kondratowicza - Urząd Dzielnicy Targówek" spot="1" number="6442" bikes="5+" bike_racks="20"
+                   bike_numbers="62788,64350,62007,63456,60767"/>
+            <place uid="216215" lat="52.2866359391383" lng="21.040256023407" name="ul. Chodecka - ul. Żuromińska"
+                   spot="1" number="6443" bikes="5+" bike_racks="15" bike_numbers="60465,62637,63688,60276,64970"/>
+            <place uid="216216" lat="52.1785766728196" lng="21.0028231143951" name="Galeria Mokotów" spot="1"
+                   number="6444" bikes="0" bike_racks="20"/>
+            <place uid="219805" lat="52.1882400983785" lng="20.9603476524353" name="OSiR Włochy" spot="1" number="6445"
+                   bikes="4" bike_racks="15" bike_numbers="63787,60875,60387,60808"/>
+            <place uid="220679" lat="52.1331653444223" lng="21.0748189687729" name="ul. Wąwozowa- ul.Rosoła" spot="1"
+                   number="6446" bikes="5+" bike_racks="12" bike_numbers="62625,60887,64956,62619,62729"/>
+            <place uid="220688" lat="52.2011367425548" lng="20.9353065490723"
+                   name="al. Jerozolimskie - rejon ulicy Popularnej" spot="1" number="6447" bikes="2" bike_racks="14"
+                   bike_numbers="63505,63538"/>
+            <place uid="220693" lat="52.2056473828459" lng="20.9158551692963" name="PKP Włochy" spot="1" number="6448"
+                   bikes="5+" bike_racks="15" bike_numbers="64477,64309,60638,64779,63477"/>
+            <place uid="220702" lat="52.1375116703874" lng="21.0504108667374" name="ul. Stryjeńskich- ul. Belgradzka"
+                   spot="1" number="6449" bikes="5+" bike_racks="12" bike_numbers="60569,64368,62641,63731,62843"/>
+            <place uid="220721" lat="52.1927060095741" lng="20.959939956665" name="Al. Krakowska - UD Włochy" spot="1"
+                   number="6450" bikes="4" bike_racks="14" bike_numbers="64484,60940,62023,64983"/>
+            <place uid="220910" lat="52.131459624889" lng="21.0561454296112" name="ul. Stryjeńskich - Wąwozowa" spot="1"
+                   number="6451" bikes="5+" bike_racks="14" bike_numbers="63872,62996,63690,63521,62066"/>
+            <place uid="225425" lat="52.2085139658207" lng="20.9630298614502" name="ul. Szczęśliwicka- Drawska" spot="1"
+                   number="6452" bikes="5+" bike_racks="15" bike_numbers="62866,62784,64685,60634,60691"/>
+            <place uid="225574" lat="52.1945869512993" lng="20.9668707847595" name="DK Włochy" spot="1" number="6453"
+                   bikes="2" bike_racks="15" bike_numbers="61040,62971"/>
+            <place uid="227891" lat="52.2017679967376" lng="20.9822130203247" name="ul. Sanocka - Pruszkowska" spot="1"
+                   number="6455" bikes="5+" bike_racks="15" bike_numbers="63382,62832,60486,64776,60892"/>
+            <place uid="227898" lat="52.1422855548542" lng="21.0655948519707" name="ul. Belgradzka - ul. Rosoła"
+                   spot="1" number="6456" bikes="5+" bike_racks="15" bike_numbers="64802,63544,63661,60462,60370"/>
+            <place uid="227964" lat="52.2169154072792" lng="20.9710550308228" name="ul. Szczęśliwicka - APS" spot="1"
+                   number="6457" bikes="4" bike_racks="15" bike_numbers="63658,64248,63248,60750"/>
+            <place uid="237422" lat="52.1756949999786" lng="20.9963965415955" name="ul. Cybernetyki" spot="1"
+                   number="6458" bikes="0" bike_racks="16"/>
+            <place uid="243964" lat="52.2417948596094" lng="21.0240983963013" name="ul. Lipowa-Dobra 1" spot="1"
+                   number="63881" bikes="5+" bike_racks="18" bike_numbers="62103,64265,60377,64817,63726"/>
+            <place uid="245056" lat="52.2557858878398" lng="21.0102474689484"
+                   name="ul. Wybrzeże Gdańskie- Sanguszki- Skwer 1 Dywizji Pancernej 1" spot="1" number="64081"
+                   bikes="5+" bike_numbers="64739,62094,60358,60390,60364"/>
+            <place uid="245160" lat="52.2389435643855" lng="21.0501480102539" name="Rondo Waszyngtona-Stadion Narodowy1"
+                   spot="1" number="63741" bikes="5+" bike_racks="22" bike_numbers="63633,64409,62876,60963,60490"/>
+            <place uid="245394" lat="52.2389172843149" lng="20.9432458877563" name="ul. Jana Olbrachta - Górczewska"
+                   spot="1" number="6459" bikes="5+" bike_racks="15" bike_numbers="62113,63894,63717,60792,64889"/>
+            <place uid="245533" lat="52.236998797125" lng="20.9721708297729" name="Leszno - Młynarska" spot="1"
+                   number="6460" bikes="5+" bike_racks="15" bike_numbers="63148,64420,60661,60644,64287"/>
+            <place uid="245672" lat="52.208684902999" lng="20.9464645385742" name="Miasteczko Orange" spot="1"
+                   number="6461" bikes="5+" bike_racks="20" bike_numbers="60597,64706,63310,63130,60360"/>
+            <place uid="245673" lat="52.2082641333771" lng="20.9456920623779" name="Miasteczko Orange 1" spot="1"
+                   number="64611" bikes="5+" bike_racks="20" bike_numbers="63377,60410,64845,63278,60840"/>
+            <place uid="246156" lat="52.2101312681819" lng="21.0065460205078" name="Al. Niepodległości - Batorego 1"
+                   spot="1" number="64201" bikes="4" bike_racks="10" bike_numbers="63485,64469,60733,63184"/>
+            <place uid="246276" lat="52.1492561531476" lng="21.0453656315804" name="Metro Imielin - Ratusz Ursynów 1"
+                   spot="1" number="63441" bikes="1" bike_racks="7" bike_numbers="60654"/>
+            <place uid="246394" lat="52.233844939344" lng="20.9656047821045" name="ul. Wolska - Płocka" spot="1"
+                   number="6462" bikes="5+" bike_racks="15" bike_numbers="63529,61020,64577,64858,60552"/>
+            <place uid="249962" lat="52.1827080606605" lng="20.9695851802826" name="Budynek LOT" spot="1" number="6463"
+                   bikes="5+" bike_racks="15" bike_numbers="64419,62738,64257,64397,60868"/>
+        </city>
+    </country>
+</markers>

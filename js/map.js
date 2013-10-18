@@ -41,13 +41,18 @@ bikeLayer.setMap(map);
     var directionsDisplayWalkToStation = new google.maps.DirectionsRenderer({polylineOptions: rendererWalkToStationsOptions});
     var directionsDisplayWalkFromStation = new google.maps.DirectionsRenderer({polylineOptions: rendererFromStationOptions});
     var directionsDisplayBike = new google.maps.DirectionsRenderer({polylineOptions: rendererBikingOptions});
-
 //function that calculate routes
 function calcRoute(from, fromStation, toStation, to) {
 
     directionsDisplayWalkToStation.setMap(map);
     directionsDisplayWalkFromStation.setMap(map);
     directionsDisplayBike.setMap(map);
+
+    var marker = new google.maps.Marker({
+        position: fromStation,
+        map: map,
+        icon: 'img/map-bike.png'
+    });
 
     var bounds = new google.maps.LatLngBounds();
     bounds.extend(from);

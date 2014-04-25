@@ -1,12 +1,15 @@
 {
   "name": "bikeday",
-  "description": "Jakdojade clone for Vertulilo bike in Warsaw",
+  "description": "Verturilo pathfinder",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Freeport-Metrics/bikeday.git"
+    "url": "https://github.com/janisz/bikeday.git"
   },
-  "keywords": ["bike", "vertulilo", "bikeday"],
-  "bin": { "bikeday": "./bin/server" },
+  "license" : "MIT",
+  "keywords": ["bike", "vertulilo", "bikeday", "pathfinder", "Warsaw"],
+  "scripts": {
+    "start": "node app.js"
+  },
   "engines": { "node": ">= 0.6.0" }
 }

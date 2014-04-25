@@ -1,0 +1,12 @@
+{
+  "name": "bikeday",
+  "description": "Jakdojade clone for Vertulilo bike in Warsaw",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Freeport-Metrics/bikeday.git"
+  },
+  "keywords": ["bike", "vertulilo", "bikeday"],
+  "bin": { "bikeday": "./bin/server" },
+  "engines": { "node": ">= 0.6.0" }
+}

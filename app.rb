@@ -20,7 +20,6 @@ class Veturilo < WEBrick::HTTPServlet::AbstractServlet
     params = {:city => 210}
     uri.query = URI.encode_www_form( params )
 
-
     response = Net::HTTP.get(uri)
     return 200, "text/html", response
   end

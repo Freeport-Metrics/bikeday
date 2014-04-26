@@ -19,8 +19,8 @@ $(document).ready(function () {
                     {
                         $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
                     }
-                })
-            })
+                });
+            });
             // locations
             var from;
             var fromStation;
@@ -63,7 +63,7 @@ $(document).ready(function () {
 
             return false;
         }
-    )
+    );
 
 
 });

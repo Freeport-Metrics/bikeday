@@ -1,7 +1,7 @@
 function findStations(callback) {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:8765/mockdata/veturilo.xml',
+        url: 'mockdata/veturilo.xml',
         dataType: 'xml',
         success: function (xml) {
             var stations = [];

@@ -89,8 +89,10 @@ function weather(startHour, hoursOnARoad, callback) {
             result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It will be great weather during your trip";
         }
 
-        result.icon = parsed_json.hourly_forecast.worstWeather.icon_url;
-        result.endHour = parsed_json.hourly_forecast.offset + hoursOnARoad.FCTTIME.hour;
+        console.log(parsed_json.hourly_forecast);
+
+        result.icon = parsed_json.hourly_forecast[0].icon_url;
+        result.endHour = parsed_json.hourly_forecast[0].offset + hoursOnARoad.hour;
         result.startHour = startHour;
 
         callback(result);

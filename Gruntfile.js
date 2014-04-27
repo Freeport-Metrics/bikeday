@@ -49,11 +49,11 @@ module.exports = function(grunt) {
     includeSource: {
       options: {
         basePath: '',
-        baseUrl: '/dist'
+        baseUrl: ''
       },
       myTarget: {
         files: {
-          'dist/index.html': 'index.html'
+          'index.html': 'index.html.tpl'
         }
       }
     },

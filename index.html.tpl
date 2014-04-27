@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link href="dist/bikeday.css" rel="stylesheet" type="text/css">
+    <!-- include: "type": "css", "files": "dist/**/*.css" -->
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
@@ -101,6 +101,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-<script type="text/javascript" src="dist/bikeday.js"></script>
+<!-- include: "type": "js", "files": "dist/**/*.js" -->
 </body>
 </html>

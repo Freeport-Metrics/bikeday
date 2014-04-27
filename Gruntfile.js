@@ -2,9 +2,6 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    copy: {
-      main: {expand: true, cwd: 'src/', src: ['img/**'], dest: 'dist/'}
-    },
     cssmin: {
       add_banner: {
         options: {
@@ -59,7 +56,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'copy', 'cssmin', 'concat', 'includeSource']
+      tasks: ['jshint', 'cssmin', 'concat', 'includeSource']
     }
   });
 
@@ -69,10 +66,9 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-include-source');
-grunt.loadNpmTasks('grunt-contrib-copy');
 
 grunt.registerTask('test', ['jshint']);
 
-grunt.registerTask('default', ['jshint', 'copy', 'cssmin', 'concat', 'uglify', 'includeSource']);
+grunt.registerTask('default', ['jshint', 'cssmin', 'concat', 'uglify', 'includeSource']);
 
 };

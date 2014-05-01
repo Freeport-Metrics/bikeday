@@ -4,10 +4,9 @@ bikeday
 ###Run application
 
 1. Checkout code `git clone https://github.com/Freeport-Metrics/bikeday.git`
-2. Start ruby proxy `ruby app.rb`
-3. Navigate to [http://localhost:8765/index.html](http://localhost:8765/index.html)
-
-
+2. `node install`
+3. Start app `node app.js`
+4. Navigate to [http://localhost:8765/index.html](http://localhost:8765/index.html)
 
 ###CREDITS
 

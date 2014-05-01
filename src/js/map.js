@@ -42,6 +42,10 @@ var markers =
         icon: 'img/stop-walk.png'
     })
 };
+
+
+var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+var bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
 
@@ -133,10 +137,10 @@ function calcRoute(from, fromStation, toStation, to) {
             directionsDisplayWalkToStation.setDirections(result);
         }
         else {
-            console.error("Error", status)
+            console.error("Error", status);
         }
         var duration = result.routes[0].legs[0].duration.value;
-        $("#toStationDuration").html(result.routes[0].legs[0].duration.text)
+        $("#toStationDuration").html(result.routes[0].legs[0].duration.text);
         console.log("Walk to station:", result.routes[0].legs[0].duration);
         directionsService.route(requestBicycling, function (result, status) {
             console.log("Status", status);
@@ -145,7 +149,7 @@ function calcRoute(from, fromStation, toStation, to) {
                 directionsDisplayBike.setDirections(result);
             }
             else {
-                console.error("Error", status)
+                console.error("Error", status);
             }
             duration = duration + result.routes[0].legs[0].duration.value;
             console.log("Biking duration:", result.routes[0].legs[0].duration);
@@ -156,14 +160,37 @@ function calcRoute(from, fromStation, toStation, to) {
                     directionsDisplayWalkFromStation.setDirections(result);
                 }
                 else {
-                    console.error("Error", status)
+                    console.error("Error", status);
                 }
                 duration = duration + result.routes[0].legs[0].duration.value;
-                $("#toEndDuration").html(result.routes[0].legs[0].duration.text)
+                $("#toEndDuration").html(result.routes[0].legs[0].duration.text);
                 var endTime = (parseInt($('#hour').val(), 10)) + (duration / 3600) % 24;
                 $("#endTime").html(Math.ceil(endTime));
+
                 console.log("Total duration", duration);
                 console.log("Walk to end:", result.routes[0].legs[0].duration);
+
+                weather($('#hour').val(), Math.ceil(duration / 3600), function(result)
+                {
+                console.log("Result", result);
+                endHour = result.endHour;
+                startHour = result.startHour;
+                $('#weather').html(result.message + "<img src='" + result.icon + "'/>");
+                sunsetSunrise(endHour, function(result)
+                {
+                  $('#sunsetSunrise').html("");
+                    if ((startHour > result.sunsetHour && startHour < 24) ||
+                      (startHour < result.sunsetHour &&
+                        (startHour >= 0 && startHour < result.sunriseHour)))
+                    {
+                        $('#sunsetSunrise').html("You will be biking in the dark, after sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
+                    }
+                    else
+                    {
+                        $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
+                    }
+                });
+            });
             });
         });
 

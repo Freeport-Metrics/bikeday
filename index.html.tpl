@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <link href="dist/bikeday.css" rel="stylesheet" type="text/css">
+    <!-- include: "type": "css", "files": "dist/**/*.css" -->
 
 </head>
 <body>
@@ -102,6 +102,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-<script type="text/javascript" src="dist/bikeday.js"></script>
+<!-- include: "type": "js", "files": "dist/**/*.js" -->
 </body>
 </html>

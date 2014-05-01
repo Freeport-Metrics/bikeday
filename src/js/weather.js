@@ -1,10 +1,10 @@
 function weather(startHour, hoursOnARoad, callback) {
     $.ajax({ url: "http://api.wunderground.com/api/086afffe3fa8ba4d/hourly/q/Poland/Warsaw.json", dataType: "jsonp", success: function (parsed_json) {
-        var temp_c = parsed_json['hourly_forecast'][0]['temp']['metric'];
-        var beginHour = parsed_json['hourly_forecast'][0]['FCTTIME']['hour'];
+        var temp_c = parsed_json.hourly_forecast[0].temp.metric;
+        var beginHour = parsed_json.hourly_forecast[0].FCTTIME.hour;
         var offset = startHour - beginHour;
         var x = "";
-        var conditions = new Array();
+        var conditions = [];
         conditions[0]="Thunderstorms";
         conditions[1]="Thunderstorm";
         conditions[2]="Chance of Thunderstorms";
@@ -36,7 +36,7 @@ function weather(startHour, hoursOnARoad, callback) {
         {
             for (j = 0; j < 25; ++j )
             {
-                if (parsed_json['hourly_forecast'][i]['condition'] === conditions[j])
+                if (parsed_json.hourly_forecast[i].condition === conditions[j])
                 {
                     if (j < currentJ)
                     {
@@ -89,21 +89,27 @@ function weather(startHour, hoursOnARoad, callback) {
             result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It will be great weather during your trip";
         }
 
-        result.icon = parsed_json['hourly_forecast'][worstWeather]['icon_url'];
-        result.endHour = parsed_json['hourly_forecast'][offset + hoursOnARoad]['FCTTIME']['hour'];
+        console.log(parsed_json.hourly_forecast);
+
+        result.icon = parsed_json.hourly_forecast[0].icon_url;
+        result.endHour = parsed_json.hourly_forecast[0].offset + hoursOnARoad.hour;
         result.startHour = startHour;
 
         callback(result);
     } });
 }
 function sunsetSunrise(endHour, callback) {
-    $.ajax({ url: "http://api.wunderground.com/api/086afffe3fa8ba4d/astronomy/q/Poland/Warsaw.json", dataType: "jsonp", success: function (parsed_json) {
-        var result = {
-            sunriseHour: parsed_json['moon_phase']['sunrise']['hour'],
-            sunriseMinute:  parsed_json['moon_phase']['sunrise']['minute'],
-            sunsetHour:  parsed_json['moon_phase']['sunset']['hour'],
-            sunsetMinute: parsed_json['moon_phase']['sunset']['minute']
-        };
-        callback(result);
-    } });
+    $.ajax({
+        url: "http://api.wunderground.com/api/086afffe3fa8ba4d/astronomy/q/Poland/Warsaw.json",
+        dataType: "jsonp",
+        success: function (parsed_json) {
+            var result = {
+                sunriseHour: parsed_json.moon_phase.sunrise.hour,
+                sunriseMinute:  parsed_json.moon_phase.sunrise.minute,
+                sunsetHour:  parsed_json.moon_phase.sunset.hour,
+                sunsetMinute: parsed_json.moon_phase.sunset.minute
+            };
+            callback(result);
+        }
+    });
 }

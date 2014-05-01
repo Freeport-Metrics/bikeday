@@ -1,0 +1,35 @@
+{
+  "name": "bikeday",
+  "description": "Verturilo pathfinder",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janisz/bikeday.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "bike",
+    "vertulilo",
+    "bikeday",
+    "pathfinder",
+    "Warsaw"
+  ],
+  "scripts": {
+    "start": "node app.js"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-include-source": "~0.3.5",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-connect": "~0.7.1"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  }
+}

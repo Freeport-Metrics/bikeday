@@ -20,6 +20,7 @@ $(document).ready(function () {
                         $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
                     }
                 });
+                window.scrollTo(0,document.body.scrollHeight);
             });
             // locations
             var from;

@@ -1,78 +1,46 @@
-var http = require("http"),
-    url = require("url"),
-    path = require("path"),
-    fs = require("fs")
-port = Number(process.env.PORT || 8765);
-debug = process.argv[3] || false;
+var express = require('express')
+  , cors = require('cors')
+  , http = require("http")
+  , port = Number(process.env.PORT || 8765)
+  , app = express();
 
-http.createServer(function (request, response) {
+app.use(cors());
+app.use("/index.html", express.static(__dirname + '/index.html'));
+app.use("/", express.static(__dirname))
 
-    console.log(request.url);
-    var uri = url.parse(request.url).pathname
-        , filename = path.join(process.cwd(), uri);
+app.get('/veturilo/stations', function (req, res, next) {
+  console.log('Get veturilo xml');
 
-    if (request.url === "/veturilo.xml") {
-        if (debug) {
-            fs.readFile("./mockdata/veturilo.xml", "binary", function (err, file) {
-                if (err) {
-                    response.writeHead(500, {"Content-Type": "text/plain"});
-                    response.write(err + "\n");
-                    response.end();
-                    return;
-                }
+  var options = {
+    host: 'nextbike.net',
+    path: '/maps/nextbike-official.xml?city=210',
+    method: 'GET',
+    headers: req.headers
+  };
 
-                response.writeHead(200);
-                response.write(file, "binary");
-                response.end();
-            });
-            return;
-        }
-        var options = {
-            host: 'nextbike.net',
-            path: '/maps/nextbike-official.xml?city=210'
-        };
-
-        callback = function (res) {
-            var str = '';
-
-            res.on('data', function (chunk) {
-                str += chunk;
-            });
-
-            res.on('end', function () {
-                response.writeHead(200, {"Content-Type": "text/plain; charset=utf-8"});
-                response.write(str, "binary");
-                response.end();
-            });
-        }
-
-        http.request(options, callback).end();
-        return;
-    }
-    fs.exists(filename, function (exists) {
-        if (!exists) {
-            response.writeHead(404, {"Content-Type": "text/plain"});
-            response.write("404 Not Found\n");
-            response.end();
-            return;
-        }
-
-        if (fs.statSync(filename).isDirectory()) filename += '/index.html';
-
-
-        fs.readFile(filename, "binary", function (err, file) {
-            if (err) {
-                response.writeHead(500, {"Content-Type": "text/plain"});
-                response.write(err + "\n");
-                response.end();
-                return;
-            }
-
-            response.writeHead(200);
-            response.write(file, "binary");
-            response.end();
-        });
+  var creq = http.get(options, function (cres) {
+    cres.setEncoding('utf-8');
+    cres.on('data', function (chunk) {
+      res.write(chunk);
     });
-}).listen(parseInt(port, 10));
 
-console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");
+    cres.on('end', function () {
+      console.log(cres.statusCode);
+      res.writeHead(cres.statusCode);
+      res.end();
+    });
+
+  }).on('error', function (e) {
+    console.log(e.message);
+    res.writeHead(500);
+    res.end();
+  });
+
+  creq.end();
+
+});
+
+
+var server = app.listen(port, function () {
+  console.log('Listening on http://localhost:' + server.address().port);
+});

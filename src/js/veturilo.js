@@ -1,7 +1,7 @@
 function findStations(callback) {
     $.ajax({
         type: 'GET',
-        url: 'http://frozen-mountain-1645.herokuapp.com/veturilo/stations',
+        url: 'http://nextbike.net/maps/nextbike-official.xml?city=210',
         dataType: 'xml',
         success: function (xml) {
             var stations = [];

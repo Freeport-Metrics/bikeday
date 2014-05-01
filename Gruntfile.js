@@ -63,7 +63,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>', 'src/**/*.*', '**/*.*.tpl'],
+      files: ['<%= jshint.files %>', 'src/**/*.*', '**/_*.html'],
       tasks: ['jshint', 'cssmin', 'concat', 'includeSource']
     }
   });

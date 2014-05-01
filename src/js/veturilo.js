@@ -1,7 +1,7 @@
 function findStations(callback) {
     $.ajax({
         type: 'GET',
-        url: 'mockdata/veturilo.xml',
+        url: 'http://frozen-mountain-1645.herokuapp.com/veturilo.xml',
         dataType: 'xml',
         success: function (xml) {
             var stations = [];

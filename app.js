@@ -11,7 +11,7 @@ http.createServer(function (request, response) {
     var uri = url.parse(request.url).pathname
         , filename = path.join(process.cwd(), uri);
 
-    if (request.url === "/veturilo") {
+    if (request.url === "/veturilo.xml") {
         if (debug) {
             fs.readFile("./mockdata/veturilo.xml", "binary", function (err, file) {
                 if (err) {
@@ -40,7 +40,7 @@ http.createServer(function (request, response) {
             });
 
             res.on('end', function () {
-                response.writeHead(200, {"Content-Type": "text/xml; charset=utf-8"});
+                response.writeHead(200, {"Content-Type": "text/plain; charset=utf-8"});
                 response.write(str, "binary");
                 response.end();
             });

@@ -19,14 +19,12 @@ app.get('/veturilo/stations', function (req, res, next) {
   };
 
   var creq = http.get(options, function (cres) {
-    cres.setEncoding('utf-8');
     cres.on('data', function (chunk) {
       res.write(chunk);
     });
 
     cres.on('end', function () {
       console.log(cres.statusCode);
-      res.writeHead(cres.statusCode);
       res.end();
     });
 

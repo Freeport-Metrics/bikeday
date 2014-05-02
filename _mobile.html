@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bikeday</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
 </head>
 <body>
@@ -90,8 +91,10 @@
         };
         resizeBox();
         $(window).resize(resizeBox);
-        $("div:jqmData(role='page')").one('pageshow', function () {
+        $("div:jqmData(role='page')").bind('pageshow', function () {
             google.maps.event.trigger(map, "resize");
+            map.setCenter(new google.maps.LatLng(52.2324, 21.0127));
+            map.setZoom(10);
         });
     });
 </script>

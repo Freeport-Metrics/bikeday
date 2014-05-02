@@ -170,11 +170,14 @@ function calcRoute(from, fromStation, toStation, to) {
                 console.log("Total duration", duration);
                 console.log("Walk to end:", result.routes[0].legs[0].duration);
 
-                weather($('#hour').val(), Math.ceil(duration / 3600), function(result)
+                var hour = new Date();
+                hour.setMinutes (hour.getMinutes() + 30);
+                hour.setMinutes (0);
+                weather(hour.getHours(), Math.ceil(duration / 3600), function(result)
                 {
                 console.log("Result", result);
-                endHour = result.endHour;
-                startHour = result.startHour;
+                var endHour = result.endHour;
+                var startHour = result.startHour;
                 $('#weather').html(result.message + "<img src='" + result.icon + "'/>");
                 sunsetSunrise(endHour, function(result)
                 {
@@ -189,6 +192,8 @@ function calcRoute(from, fromStation, toStation, to) {
                     {
                         $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
                     }
+                    $('.results').show();
+                    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
                 });
             });
             });

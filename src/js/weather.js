@@ -2,7 +2,7 @@ function weather(startHour, hoursOnARoad, callback) {
     $.ajax({ url: "http://api.wunderground.com/api/086afffe3fa8ba4d/hourly/q/Poland/Warsaw.json", dataType: "jsonp", success: function (parsed_json) {
         var temp_c = parsed_json.hourly_forecast[0].temp.metric;
         var beginHour = parsed_json.hourly_forecast[0].FCTTIME.hour;
-        var offset = startHour - beginHour;
+        var offset = Math.max(startHour - beginHour, 0);
         var x = "";
         var conditions = [];
         conditions[0]="Thunderstorms";

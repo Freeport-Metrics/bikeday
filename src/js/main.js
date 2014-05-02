@@ -1,9 +1,12 @@
 $(document).ready(function () {
 
     $('.results').hide();
-    $('#hour').val((new Date().getHours() + 1)%24);
+    var hour = new Date();
+    hour.setMinutes (hour.getMinutes() + 30);
+    hour.setMinutes (0);
+
     $('#searchButton').click(function () {
-            weather($('#hour').val(), 2, function(result)
+            weather(hour.getHours(), 2, function(result)
             {
                 console.log(result);
                 endHour = result.endHour;
@@ -11,14 +14,14 @@ $(document).ready(function () {
                 $('#weather').html(result.message + "<img src='" + result.icon + "'/>");
                 sunsetSunrise(endHour, function(result)
                 {
-                    if ((startHour > result.sunsetHour && startHour < 24) || (startHour < result.sunsetHour && (startHour >= 0 && startHour < result.sunriseHour)))
-                    {
-                        $('#sunsetSunrise').html("You will be biking in the dark, after sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
-                    }
-                    else
-                    {
-                        $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
-                    }
+//                    if ((startHour > result.sunsetHour && startHour < 24) || (startHour < result.sunsetHour && (startHour >= 0 && startHour < result.sunriseHour)))
+//                    {
+//                        $('#sunsetSunrise').html("You will be biking in the dark, after sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
+//                    }
+//                    else
+//                    {
+//                        $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
+//                    }
                     $('.results').show();
                     $("html, body").animate({ scrollTop: $(document).height() }, "slow");
                 });

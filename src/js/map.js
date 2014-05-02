@@ -102,7 +102,7 @@ function calcRoute(from, fromStation, toStation, to) {
     origin: from,
     destination: fromStation,
     transitOptions: {
-      departureTime: new Date(1337675679473)
+      departureTime: new Date()
     },
     travelMode: google.maps.TravelMode.WALKING
   };
@@ -111,7 +111,7 @@ function calcRoute(from, fromStation, toStation, to) {
     origin: fromStation,
     destination: toStation,
     transitOptions: {
-      departureTime: new Date(1337675679473)
+      departureTime: new Date()
     },
     travelMode: google.maps.TravelMode.BICYCLING
   };
@@ -120,7 +120,7 @@ function calcRoute(from, fromStation, toStation, to) {
     origin: toStation,
     destination: to,
     transitOptions: {
-      departureTime: new Date(1337675679473)
+      departureTime: new Date()
     },
     travelMode: google.maps.TravelMode.WALKING
   };
@@ -159,13 +159,17 @@ function calcRoute(from, fromStation, toStation, to) {
         }
         duration = duration + result.routes[0].legs[0].duration.value;
         $("#toEndDuration").html(result.routes[0].legs[0].duration.text);
-        var endTime = (parseInt($('#hour').val(), 10)) + (duration / 3600) % 24;
+        var hour = new Date();
+        hour.setSeconds(duration);
+        hour.setMinutes (30);
+        hour.setMinutes (0);
+        var endTime = hour.getHours();
         $("#endTime").html(Math.ceil(endTime));
 
         console.log("Total duration", duration);
         console.log("Walk to end:", result.routes[0].legs[0].duration);
 
-        var hour = new Date();
+        hour = new Date();
         hour.setMinutes(hour.getMinutes() + 30);
         hour.setMinutes(0);
         weather(hour.getHours(), Math.ceil(duration / 3600), function (result) {

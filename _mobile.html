@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <title>Bikeday</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script src="src/js/map.js"></script>
 </head>
 <body>
 
@@ -63,7 +59,6 @@
 
 <!-- Start of second page -->
 <div data-role="page" id="map">
-
     <div data-role="header">
         <h1>Bikeday</h1>
 
@@ -84,6 +79,10 @@
 </div>
 <!-- /page -->
 </body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
     $(document).ready(function () {
         var resizeBox = function () {
@@ -91,7 +90,24 @@
         };
         resizeBox();
         $(window).resize(resizeBox);
+        $("div:jqmData(role='page')").one('pageshow', function () {
+            google.maps.event.trigger(map, "resize");
+        });
     });
 </script>
-
+<!-- include: "type": "js", "files": "dist/**/*.js" -->
+<script>
+    (function (e, t, n, r, i, s, o) {
+        e["GoogleAnalyticsObject"] = i;
+        e[i] = e[i] || function () {
+            (e[i].q = e[i].q || []).push(arguments)
+        }, e[i].l = 1 * new Date;
+        s = t.createElement(n), o = t.getElementsByTagName(n)[0];
+        s.async = 1;
+        s.src = r;
+        o.parentNode.insertBefore(s, o)
+    })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
+    ga("create", "UA-36386333-2", "janisz.github.io");
+    ga("send", "pageview")
+</script>
 </html>

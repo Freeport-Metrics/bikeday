@@ -58,7 +58,8 @@ module.exports = function(grunt) {
       },
       myTarget: {
         files: {
-          'index.html': '_index.html'
+          'index.html': '_index.html',
+          'mobile.html': '_mobile.html'
         }
       }
     },

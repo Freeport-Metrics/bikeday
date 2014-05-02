@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-
+    $('.results').hide();
     $('#hour').val((new Date().getHours() + 1)%24);
     $('#searchButton').click(function () {
             weather($('#hour').val(), 2, function(result)
@@ -19,8 +19,9 @@ $(document).ready(function () {
                     {
                         $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
                     }
+                    $('.results').show();
+                    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
                 });
-                window.scrollTo(0,document.body.scrollHeight);
             });
             // locations
             var from;
@@ -61,7 +62,6 @@ $(document).ready(function () {
 
 
             });
-
             return false;
         }
     );

@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    $('.results').hide();
     var hour = new Date();
     hour.setMinutes (hour.getMinutes() + 30);
     hour.setMinutes (0);

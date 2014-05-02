@@ -23,29 +23,6 @@ var mapOptions = {
 
 var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 var bikeLayer = new google.maps.BicyclingLayer();
-var markers =
-{
-    startWalk: new google.maps.Marker({
-        map: map,
-        icon: 'img/start-walk.png'
-    }),
-    startBike: new google.maps.Marker({
-        map: map,
-        icon: 'img/start-bike.png'
-    }),
-    stopBike: new google.maps.Marker({
-        map: map,
-        icon: 'img/stop-bike.png'
-    }),
-    stopWalk: new google.maps.Marker({
-        map: map,
-        icon: 'img/stop-walk.png'
-    })
-};
-
-
-var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-var bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
 

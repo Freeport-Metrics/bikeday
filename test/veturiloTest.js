@@ -84,7 +84,7 @@ describe('findStations success', function () {
     $.ajax.restore();
   });
 
-  it('should return parsed response from veturilo api', function () {
+  it('should call callback with parsed response from veturilo api', function () {
     findStations(function (result) {
       expect(result).to.be.a('array');
       expect(result).to.have.length(5);
@@ -116,7 +116,7 @@ describe('findStations error', function () {
     $.ajax.restore();
   });
 
-  it('should return empty array when veturilo api is unreachable', function () {
+  it('should call callback with empty array as parameter when veturilo api is unreachable', function () {
     findStations(function (result) {
       expect(result).to.be.a('array');
       expect(result).to.have.length(0);

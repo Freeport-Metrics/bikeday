@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -51,6 +51,16 @@ module.exports = function(grunt) {
         }
       }
     },
+    simplemocha: {
+      options: {
+        globals: ['expect'],
+        timeout: 3000,
+        ignoreLeaks: false,
+        ui: 'bdd',
+        reporter: 'min'
+      },
+      all: { src: ['test/*.js'] }
+    },
     includeSource: {
       options: {
         basePath: '',
@@ -65,7 +75,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['<%= jshint.files %>', 'src/**/*.*', '**/_*.html'],
-      tasks: ['jshint', 'cssmin', 'concat', 'includeSource']
+      tasks: ['jshint', 'simplemocha', 'cssmin', 'concat', 'includeSource']
     }
   });
 
@@ -76,9 +86,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-include-source');
+  grunt.loadNpmTasks('grunt-simple-mocha');
 
-  grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('server', ['connect', 'watch']);
-  grunt.registerTask('default', ['jshint', 'cssmin', 'concat', 'uglify', 'includeSource']);
+  grunt.registerTask('test', ['jshint', 'simplemocha']);
+  grunt.registerTask('server', ['jshint', 'simplemocha', 'connect', 'watch']);
+  grunt.registerTask('default', ['jshint', 'simplemocha', 'cssmin', 'concat', 'uglify', 'includeSource']);
 
 };

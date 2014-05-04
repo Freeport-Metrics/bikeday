@@ -80,6 +80,19 @@ module.exports = function (grunt) {
     watch: {
       files: ['<%= jshint.files %>', 'src/**/*.*', '**/_*.html'],
       tasks: ['jshint', 'simplemocha', 'cssmin', 'concat', 'includeSource']
+    },
+    bump: {
+      options: {
+        files: ['package.json'],
+        updateConfigs: [],
+        commit: true,
+        commitMessage: 'Release v%VERSION%',
+        commitFiles: ['-a'],
+        createTag: false,
+        push: true,
+        pushTo: 'origin',
+        gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d' // options to use with '$ git describe'
+      }
     }
   });
 
@@ -91,6 +104,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-include-source');
   grunt.loadNpmTasks('grunt-simple-mocha');
+  grunt.loadNpmTasks('grunt-bump');
 
   grunt.registerTask('test', ['jshint', 'simplemocha:spec']);
   grunt.registerTask('test_min', ['jshint', 'simplemocha:all']);

@@ -82,8 +82,7 @@
         $(window).resize(resizeBox);
         $("div:jqmData(role='page')").bind('pageshow', function () {
             google.maps.event.trigger(map, "resize");
-            map.setCenter(new google.maps.LatLng(52.2324, 21.0127));
-            map.setZoom(11);
+            setMapBoundsToMarkers();
         });
         $('#search').on("swipeleft", function (event) {
             if ($(event.target).is(':visible')) {

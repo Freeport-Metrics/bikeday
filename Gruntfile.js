@@ -59,7 +59,11 @@ module.exports = function (grunt) {
         ui: 'bdd',
         reporter: 'min'
       },
-      all: { src: ['test/*.js'] }
+      all: { src: ['test/*.js'] },
+      spec: {
+        src: ['test/*.js'],
+        options: {reporter: 'spec'}
+      }
     },
     includeSource: {
       options: {
@@ -88,8 +92,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-include-source');
   grunt.loadNpmTasks('grunt-simple-mocha');
 
-  grunt.registerTask('test', ['jshint', 'simplemocha']);
+  grunt.registerTask('test', ['jshint', 'simplemocha:spec']);
   grunt.registerTask('server', ['jshint', 'simplemocha', 'connect', 'watch']);
-  grunt.registerTask('default', ['jshint', 'simplemocha', 'cssmin', 'concat', 'uglify', 'includeSource']);
+  grunt.registerTask('default', ['jshint', 'simplemocha:spec', 'cssmin', 'concat', 'uglify', 'includeSource']);
 
 };

@@ -1,9 +1,10 @@
 var map;
 
-var directionsService;
-var directionsDisplayWalkToStation;
-var directionsDisplayWalkFromStation;
-var directionsDisplayBike;
+var directionsService,
+  directionsDisplayWalkToStation,
+  directionsDisplayWalkFromStation,
+  directionsDisplayBike,
+  markers = [];
 
 function initialize() {
 
@@ -59,34 +60,12 @@ function initialize() {
   directionsDisplayBike = new google.maps.DirectionsRenderer({preserveViewport: true, polylineOptions: rendererBikingOptions, markerOptions: {visible: false}});
 }
 
-//function that calculate routes
 function calcRoute(from, fromStation, toStation, to) {
 
   directionsDisplayWalkToStation.setMap(map);
   directionsDisplayWalkFromStation.setMap(map);
   directionsDisplayBike.setMap(map);
-
-  new google.maps.Marker({
-    position: from,
-    map: map,
-    icon: 'img/start-walk.png'
-  });
-  new google.maps.Marker({
-    position: fromStation,
-    map: map,
-    icon: 'img/start-bike.png'
-  });
-  new google.maps.Marker({
-    position: toStation,
-    map: map,
-    icon: 'img/stop-bike.png'
-  });
-  new google.maps.Marker({
-    position: to,
-    map: map,
-    icon: 'img/stop-walk.png'
-  });
-
+  addMarkersToMap(from, fromStation, toStation, to);
   var bounds = new google.maps.LatLngBounds();
   bounds.extend(from);
   bounds.extend(to);
@@ -161,8 +140,8 @@ function calcRoute(from, fromStation, toStation, to) {
         $("#toEndDuration").html(result.routes[0].legs[0].duration.text);
         var hour = new Date();
         hour.setSeconds(duration);
-        hour.setMinutes (30);
-        hour.setMinutes (0);
+        hour.setMinutes(30);
+        hour.setMinutes(0);
         var endTime = hour.getHours();
         $("#endTime").html(Math.ceil(endTime));
 
@@ -195,6 +174,35 @@ function calcRoute(from, fromStation, toStation, to) {
     });
 
   });
+}
+
+//function that calculate routes
+function addMarkersToMap(from, fromStation, toStation, to) {
+  markers.forEach(function (marker) {
+    marker.setMap(null);
+  });
+
+  markers = [new google.maps.Marker({
+    position: from,
+    map: map,
+    icon: 'img/start-walk.png'
+  }),
+    new google.maps.Marker({
+      position: fromStation,
+      map: map,
+      icon: 'img/start-bike.png'
+    }),
+    new google.maps.Marker({
+      position: toStation,
+      map: map,
+      icon: 'img/stop-bike.png'
+    }),
+    new google.maps.Marker({
+      position: to,
+      map: map,
+      icon: 'img/stop-walk.png'
+    })
+  ];
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

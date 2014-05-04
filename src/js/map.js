@@ -62,20 +62,9 @@ function initialize() {
 
 function calcRoute(from, fromStation, toStation, to) {
 
-  directionsDisplayWalkToStation.setMap(map);
-  directionsDisplayWalkFromStation.setMap(map);
-  directionsDisplayBike.setMap(map);
+  addDirectionsToMap();
   addMarkersToMap(from, fromStation, toStation, to);
-  var bounds = new google.maps.LatLngBounds();
-  bounds.extend(from);
-  bounds.extend(to);
-  bounds.extend(fromStation);
-  bounds.extend(toStation);
-  console.log("Bounding to ", bounds);
-
-  map.panToBounds(bounds);
-  map.fitBounds(bounds);
-
+  setMapBounds(from, to, fromStation, toStation);
 
   var requestToStation = {
     origin: from,
@@ -176,7 +165,22 @@ function calcRoute(from, fromStation, toStation, to) {
   });
 }
 
-//function that calculate routes
+function addDirectionsToMap() {
+  directionsDisplayWalkToStation.setMap(map);
+  directionsDisplayWalkFromStation.setMap(map);
+  directionsDisplayBike.setMap(map);
+}
+
+function setMapBounds(from, to, fromStation, toStation) {
+  var bounds = new google.maps.LatLngBounds();
+  bounds.extend(from);
+  bounds.extend(to);
+  bounds.extend(fromStation);
+  bounds.extend(toStation);
+  map.panToBounds(bounds);
+  map.fitBounds(bounds);
+}
+
 function addMarkersToMap(from, fromStation, toStation, to) {
   markers.forEach(function (marker) {
     marker.setMap(null);

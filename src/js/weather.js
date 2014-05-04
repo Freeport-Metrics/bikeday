@@ -1,115 +1,96 @@
 function weather(startHour, hoursOnARoad, callback) {
-    $.ajax({ url: "http://api.wunderground.com/api/086afffe3fa8ba4d/hourly/q/Poland/Warsaw.json", dataType: "jsonp", success: function (parsed_json) {
-        var temp_c = parsed_json.hourly_forecast[0].temp.metric;
-        var beginHour = parsed_json.hourly_forecast[0].FCTTIME.hour;
-        var offset = Math.max(startHour - beginHour, 0);
-        var x = "";
-        var conditions = [];
-        conditions[0]="Thunderstorms";
-        conditions[1]="Thunderstorm";
-        conditions[2]="Chance of Thunderstorms";
-        conditions[3]="Chance of Thunderstorm";
-        conditions[4]="Snow";
-        conditions[5]="Chance of Snow";
-        conditions[6]="Sleet";
-        conditions[7]="Chance of Sleet";
-        conditions[8]="Freezing Rain";
-        conditions[9]="Rain";
-        conditions[10]="Chance of Freezing Rain";
-        conditions[11]="Chance of Rain";
-        conditions[12]="Scattered Clouds";
-        conditions[13]="Overcast";
-        conditions[14]="Cloudy";
-        conditions[15]="Mostly Cloudy";
-        conditions[16]="Partly Cloudy";
-        conditions[17]="Flurries";
-        conditions[18]="Fog";
-        conditions[19]="Haze";
-        conditions[20]="Sunny";
-        conditions[21]="Mostly Sunny";
-        conditions[22]="Partly Sunny";
-        conditions[23]="Clear";
-        conditions[24]="Unknown";
-        var currentJ = 100;
-        var worstWeather = 100;
-        for (var i = offset; i < hoursOnARoad; i++)
-        {
-            for (j = 0; j < 25; ++j )
-            {
-                if (parsed_json.hourly_forecast[i].condition === conditions[j])
-                {
-                    if (j < currentJ)
-                    {
-                        currentJ = j;
-                        worstWeather = i;
-                    }
-                }
-            }
-        }
-        var result = {};
+  $.ajax({ url: "http://api.wunderground.com/api/086afffe3fa8ba4d/hourly/q/Poland/Warsaw.json",
+    dataType: "jsonp",
+    success: function (parsed_json) {
+      var conditions = [
+        'Thunderstorms', 'Thunderstorm', 'Chance of Thunderstorms', 'Chance of Thunderstorm', 'Snow', 'Chance of Snow',
+        'Sleet', 'Chance of Sleet', 'Freezing Rain', 'Rain', 'Chance of Freezing Rain', 'Chance of Rain',
+        'Scattered Clouds', 'Overcast', 'Cloudy', 'Mostly Cloudy', 'Partly Cloudy', 'Flurries', 'Fog', 'Haze', 'Sunny',
+        'Mostly Sunny', 'Partly Sunny', 'Clear', 'Unknown'
+      ];
+      var currentConditionsIndex = Infinity;
+      var worstWeatherIndex = 0;
 
-        if (currentJ < 2)
-        {
-            result.message = "Current temperature in Warsaw is " + temp_c + ".</br> There will be thunderstorms during your trip";
-        }
-        if (currentJ > 1 && currentJ < 4)
-        {
-            result.message = "Current temperature in Warsaw is " + temp_c + ".</br> There might be thunderstorms during your trip";
-        }
-        if (currentJ == 4)
-        {
-            result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It will be snowing during your trip";
-        }
-        if (currentJ == 5)
-        {
-            result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It might be snowing during your trip";
-        }
-        if (currentJ == 6)
-        {
-           result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It will be sleeting during your trip";
-        }
-        if (currentJ == 7)
-        {
-            result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It might be sleeting during your trip";
-        }
-        if (currentJ == 8 || currentJ == 9)
-        {
-            result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It will be raining during your trip";
-        }
-        if (currentJ == 10 || currentJ == 11)
-        {
-            result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It might be raining during your trip";
-        }
-        if (currentJ > 11 && currentJ < 20)
-        {
-            result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It will be cloudy during your trip";
-        }
-        if (currentJ > 19)
-        {
-            result.message = "Current temperature in Warsaw is " + temp_c + ".</br> It will be great weather during your trip";
-        }
+      parsed_json.hourly_forecast.forEach(function (hourForecast, i) {
+        conditions.forEach(function (condition, j) {
+          if (hourForecast.condition === condition && j < currentConditionsIndex) {
+            currentConditionsIndex = j;
+            worstWeatherIndex = i;
+          }
+        });
+      });
 
-        console.log(parsed_json.hourly_forecast);
-
-        result.icon = parsed_json.hourly_forecast[0].icon_url;
-        result.endHour = parsed_json.hourly_forecast[0].offset + hoursOnARoad.hour;
-        result.startHour = startHour;
-
-        callback(result);
-    } });
+      var temp_c = parsed_json.hourly_forecast[0].temp.metric;
+      callback({
+        message: _getWeatherMessage(currentConditionsIndex, temp_c),
+        icon: parsed_json.hourly_forecast[worstWeatherIndex].icon_url,
+        endHour: startHour + hoursOnARoad,
+        startHour: startHour
+      });
+    },
+    error: function () {
+      callback({
+        message: 'The dark side clouds everything. Impossible to see the future is.',
+        icon: '',
+        endHour: startHour + hoursOnARoad,
+        startHour: startHour
+      });
+    }
+  });
 }
+
 function sunsetSunrise(endHour, callback) {
-    $.ajax({
-        url: "http://api.wunderground.com/api/086afffe3fa8ba4d/astronomy/q/Poland/Warsaw.json",
-        dataType: "jsonp",
-        success: function (parsed_json) {
-            var result = {
-                sunriseHour: parsed_json.moon_phase.sunrise.hour,
-                sunriseMinute:  parsed_json.moon_phase.sunrise.minute,
-                sunsetHour:  parsed_json.moon_phase.sunset.hour,
-                sunsetMinute: parsed_json.moon_phase.sunset.minute
-            };
-            callback(result);
-        }
-    });
+  $.ajax({
+    url: "http://api.wunderground.com/api/086afffe3fa8ba4d/astronomy/q/Poland/Warsaw.json",
+    dataType: "jsonp",
+    success: function (parsed_json) {
+      var result = {
+        sunriseHour: parsed_json.moon_phase.sunrise.hour,
+        sunriseMinute: parsed_json.moon_phase.sunrise.minute,
+        sunsetHour: parsed_json.moon_phase.sunset.hour,
+        sunsetMinute: parsed_json.moon_phase.sunset.minute
+      };
+      callback(result);
+    },
+    error: function () {
+      var result = {
+        sunriseHour: Math.NaN,
+        sunriseMinute: Math.NaN,
+        sunsetHour: Math.NaN,
+        sunsetMinute: Math.NaN
+      };
+      callback(result);
+    }
+  });
+}
+
+function _getWeatherMessage(conditions, temp_c) {
+
+  if (!$.isNumeric(conditions) || conditions - 24 === 0 || !$.isNumeric(temp_c)) {
+    return 'The dark side clouds everything. Impossible to see the future is.';
+  }
+
+  var beginign = 'Current temperature in Warsaw is ';
+  if (conditions < 2) {
+    return beginign + temp_c + ".<\/br> There will be thunderstorms during your trip";
+  }
+  if (conditions >= 2 && conditions < 4) {
+    return beginign + temp_c + ".<\/br> There might be thunderstorms during your trip";
+  }
+  if (conditions >= 4 && conditions < 5) {
+    return beginign + temp_c + ".<\/br> It will be snowing during your trip";
+  }
+  if (conditions >= 6 && conditions < 8) {
+    return beginign + temp_c + ".<\/br> It might be sleeting during your trip";
+  }
+  if (conditions >= 8 && conditions < 10) {
+    return beginign + temp_c + ".<\/br> It will be raining during your trip";
+  }
+  if (conditions >= 9 && conditions < 11) {
+    return beginign + temp_c + ".<\/br> It might be raining during your trip";
+  }
+  if (conditions >= 11 && conditions < 20) {
+    return beginign + temp_c + ".<\/br> It will be cloudy during your trip";
+  }
+  return beginign + temp_c + ".<\/br> It will be great weather during your trip";
 }

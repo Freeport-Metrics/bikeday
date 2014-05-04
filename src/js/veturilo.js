@@ -1,7 +1,7 @@
 function findStations(callback) {
     $.ajax({
         type: 'GET',
-        url: 'mockdata/veturilo.xml',
+        url: 'http://nextbike.net/maps/nextbike-official.xml?city=210',
         dataType: 'xml',
         success: function (xml) {
             var stations = [];

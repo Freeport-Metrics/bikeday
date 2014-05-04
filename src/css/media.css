@@ -1,0 +1,29 @@
+@media all and (max-width: 700px) {
+    #map-canvas {
+        position: relative;
+        padding-bottom: 75%;
+        overflow: hidden;
+    }
+
+    #map-canvas iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .header-container {
+        display: none;
+    }
+
+    #content {
+        z-index: 100;
+        width: 100%;
+        position: relative;
+    }
+
+    .ribbon img {
+        display: none;
+    }
+}

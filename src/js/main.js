@@ -1,9 +1,11 @@
 $(document).ready(function () {
 
+    var hour = new Date();
+    hour.setMinutes (hour.getMinutes() + 30);
+    hour.setMinutes (0);
 
-    $('#hour').val((new Date().getHours() + 1)%24);
     $('#searchButton').click(function () {
-            weather($('#hour').val(), 2, function(result)
+            weather(hour.getHours(), 2, function(result)
             {
                 console.log(result);
                 endHour = result.endHour;
@@ -19,6 +21,8 @@ $(document).ready(function () {
                     {
                         $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
                     }
+                    $('.results').show();
+                    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
                 });
             });
             // locations
@@ -60,7 +64,6 @@ $(document).ready(function () {
 
 
             });
-
             return false;
         }
     );

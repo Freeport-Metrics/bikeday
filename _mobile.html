@@ -12,16 +12,9 @@
 <!-- Start of first page -->
 <div data-role="page" id="search">
 
-    <div data-role="header">
+    <div data-role="header" data-position="inline" data-add-back-btn="true">
         <h1>Bikeday</h1>
-
-        <div data-role="navbar" data-iconpos="left">
-            <ul>
-                <li><a href="#search" data-icon="home">Search</a></li>
-                <li><a href="#map" data-icon="navigation">Map</a></li>
-            </ul>
-        </div>
-        <!-- /navbar -->
+        <a href="#map" data-icon="navigation" class="ui-btn-right">Map</a>
     </div>
     <!-- /header -->
 
@@ -60,16 +53,9 @@
 
 <!-- Start of second page -->
 <div data-role="page" id="map">
-    <div data-role="header">
-        <h1>Bikeday</h1>
 
-        <div data-role="navbar" data-iconpos="left">
-            <ul>
-                <li><a href="#search" data-icon="home">Search</a></li>
-                <li><a href="#map" data-icon="navigation">Map</a></li>
-            </ul>
-        </div>
-        <!-- /navbar -->
+    <div data-role="header" data-position="inline" data-add-back-btn="true">
+        <h1>Bikeday</h1>
     </div>
     <!-- /header -->
 
@@ -87,14 +73,20 @@
 <script>
     $(document).ready(function () {
         var resizeBox = function () {
-            $('#map-canvas').css({height: $(window).height() - 111});
+            $('#map-canvas').css({height: $(window).height() - 84});
         };
         resizeBox();
         $(window).resize(resizeBox);
         $("div:jqmData(role='page')").bind('pageshow', function () {
             google.maps.event.trigger(map, "resize");
             map.setCenter(new google.maps.LatLng(52.2324, 21.0127));
-            map.setZoom(10);
+            map.setZoom(11);
+        });
+        $('#search').on("swipeleft", function (event) {
+            if ($(event.target).is(':visible')) {
+                $.mobile.changePage('#map', {
+                    transition: 'slide'});
+            }
         });
     });
 </script>

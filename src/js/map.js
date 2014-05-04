@@ -8,17 +8,6 @@ var directionsService,
 
 function initialize() {
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      map.setCenter(pos);
-      map.setZoom(15);
-      $('#from').val(position.coords.latitude + ' , ' + position.coords.longitude);
-    }, function () {
-      console.log("No geolocation");
-    });
-  }
-
   var mapOptions = {
     zoom: 12,
     center: new google.maps.LatLng(52.2324, 21.0127),
@@ -43,6 +32,20 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      markers = [new google.maps.Marker({
+        map: map,
+        position: pos
+      })];
+      setMapBoundsToMarkers();
+      $('#from').val(position.coords.latitude + ' , ' + position.coords.longitude);
+    }, function () {
+      console.log("No geolocation");
+    });
+  }
+
   var rendererWalkToStationsOptions = new google.maps.Polyline({
     strokeColor: "#00FF00"
   });
@@ -64,7 +67,7 @@ function calcRoute(from, fromStation, toStation, to) {
 
   addDirectionsToMap();
   addMarkersToMap(from, fromStation, toStation, to);
-  setMapBounds(from, to, fromStation, toStation);
+  setMapBoundsToMarkers();
 
   var requestToStation = {
     origin: from,
@@ -171,12 +174,14 @@ function addDirectionsToMap() {
   directionsDisplayBike.setMap(map);
 }
 
-function setMapBounds(from, to, fromStation, toStation) {
+function setMapBoundsToMarkers() {
+  if (!markers.length) {
+    return false;
+  }
   var bounds = new google.maps.LatLngBounds();
-  bounds.extend(from);
-  bounds.extend(to);
-  bounds.extend(fromStation);
-  bounds.extend(toStation);
+  markers.forEach(function (marker) {
+    bounds.extend(marker.position);
+  });
   map.panToBounds(bounds);
   map.fitBounds(bounds);
 }

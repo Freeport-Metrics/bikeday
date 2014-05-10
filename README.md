@@ -9,6 +9,8 @@
 2. `npm install`
 3. Start app `grunt server`
 4. Navigate to [http://localhost:8001/index.html](http://localhost:8765/index.html)
+5. Code, code, code...
+6. Deploy `git checkout gh-pages && git merge master --no-commit --no-ff && grunt && grunt bump`
 
 ###CREDITS
 

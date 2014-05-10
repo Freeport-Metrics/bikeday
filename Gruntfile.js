@@ -108,7 +108,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', ['jshint', 'simplemocha:spec']);
   grunt.registerTask('test_min', ['jshint', 'simplemocha:all']);
-  grunt.registerTask('server', ['jshint', 'simplemocha', 'connect', 'watch']);
+  grunt.registerTask('server', ['test_min', 'connect', 'watch']);
   grunt.registerTask('default', ['jshint', 'simplemocha:spec', 'cssmin', 'concat', 'uglify', 'includeSource']);
 
 };

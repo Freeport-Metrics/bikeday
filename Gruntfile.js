@@ -2,6 +2,27 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    replace: {
+      all: {
+        options: {
+          //Fill replacements with your own settings
+          patterns: [
+            {
+              match: 'repoUrl', replacement: 'https://github.com/janisz/bikeday'
+            },
+            {
+              match: 'siteUrl', replacement: 'janisz.github.io'
+            },
+            {
+              match: 'gaCode', replacement: 'UA-36386333-2'
+            }
+          ]
+        },
+        files: [
+          {expand: true, flatten: true, src: ['*.html', '!_*.html'], dest: ''}
+        ]
+      }
+    },
     cssmin: {
       add_banner: {
         options: {
@@ -79,7 +100,7 @@ module.exports = function (grunt) {
     },
     watch: {
       files: ['<%= jshint.files %>', 'src/**/*.*', '**/_*.html'],
-      tasks: ['jshint', 'simplemocha', 'cssmin', 'concat', 'includeSource']
+      tasks: ['jshint', 'simplemocha', 'cssmin', 'concat', 'includeSource', 'replace']
     },
     bump: {
       options: {
@@ -96,6 +117,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -109,6 +131,6 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['jshint', 'simplemocha:spec']);
   grunt.registerTask('test_min', ['jshint', 'simplemocha:all']);
   grunt.registerTask('server', ['test_min', 'connect', 'watch']);
-  grunt.registerTask('default', ['jshint', 'simplemocha:spec', 'cssmin', 'concat', 'uglify', 'includeSource']);
+  grunt.registerTask('default', ['jshint', 'simplemocha:spec', 'cssmin', 'concat', 'uglify', 'includeSource', 'replace']);
 
 };

@@ -72,7 +72,7 @@
                 </label></p>
                 <input type="button" value="Is it a Bike day?" class="clearfix" id="searchButton"/>
             </form>
-            <div class="results">
+            <div id="results" class="results" style="display: none">
                 <h4 class="title">Of course it is!</h4>
 
 
@@ -91,7 +91,7 @@
                     <span class="station" id="toStation"/></span><br/>
                     (<span id="toEndDuration"></span> <img src="img/walk.png" alt="bike"/> away from your destination)</p>
 
-                <p>You should reach your destination at <span id="endTime"></span></p>
+                <p>You should reach your destination at<br/> <span class="station"  id="endTime"></span> o'clock</p>
 
                 <p id="weather"></p>
 

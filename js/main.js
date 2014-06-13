@@ -3,6 +3,7 @@ $(document).ready(function () {
 
     $('#hour').val((new Date().getHours() + 1)%24);
     $('#searchButton').click(function () {
+            $('#results').show();
             weather($('#hour').val(), 2, function(result)
             {
                 console.log(result);

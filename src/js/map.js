@@ -156,7 +156,7 @@ function calcRoute(from, fromStation, toStation, to) {
               $('#sunsetSunrise').html("You will be biking in the dark, after sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
             }
             else {
-              $('#sunsetSunrise').html("You won't make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
+              $('#sunsetSunrise').html("You will make it before sunset at " + result.sunsetHour + ":" + result.sunsetMinute);
             }
             $('.results').show();
             $("html, body").animate({ scrollTop: $(document).height() }, "slow");

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bikeday</title>
+    <meta name="description" content="Pathfinder for Warsaw bikes - Veturilo">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- include: "type": "css", "files": "dist/**/*.css" -->
+
+</head>
+<body>
+
+<div id="content">
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h1 class="title"><img src="img/logo.png" class="logo" alt=""/> Bikeday</h1>
+        </header>
+    </div>
+
+    <div class="main-container">
+        <!--<div class="main wrapper clearfix">-->
+
+        <aside>
+            <!--<h1 class="title">Bikeday</h1>-->
+            <h3 class="title">Plan your ride</h3>
+
+            <form class="search-form" action="">
+                <p><label>From:
+                    <input id="from" type="text" value="Warszawa Młynarska 7"/>
+                </label></p>
+
+                <p><label>To:
+                    <input id="to" type="text" value="Warszawa Złota 1"/>
+                </label></p>
+
+                <input type="button" value="Is it a Bike day?" class="clearfix" id="searchButton"/>
+            </form>
+            <div class="results">
+                <h4 class="title">Of course it is!</h4>
+
+                <p>
+                    Pick up a bike at <span class="station" id="fromStation"></span><br/>
+                    (<span id="fromStationBikes"></span> <img src="img/bike.png" alt="bike"/> available,
+                    <span id="toStationDuration"></span> <img src="img/walk.png" alt="bike"/>)
+                </p>
+
+                <p>
+                    Leave your bike at <span class="station" id="toStation"></span><br/>
+                    (<span id="toEndDuration"></span> <img src="img/walk.png" alt="bike"/> away from your destination)
+                </p>
+
+                <p>You should reach your destination at <span id="endTime"></span></p>
+
+                <p id="weather"></p>
+
+                <p id="sunsetSunrise"></p>
+            </div>
+        </aside>
+
+    </div>
+    <!-- #main-container -->
+</div>
+<div id="map-canvas"></div>
+<div class="ribbon">
+    <a href="@@repoUrl"><img
+            src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67"
+            alt="Fork me on GitHub"
+            data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<!-- include: "type": "js", "files": "dist/**/*.js" -->
+<script>
+    (function (e, t, n, r, i, s, o) {
+        e["GoogleAnalyticsObject"] = i;
+        e[i] = e[i] || function () {
+            (e[i].q = e[i].q || []).push(arguments)
+        }, e[i].l = 1 * new Date;
+        s = t.createElement(n), o = t.getElementsByTagName(n)[0];
+        s.async = 1;
+        s.src = r;
+        o.parentNode.insertBefore(s, o)
+    })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
+    ga("create", "@@gaCode", "@@siteUrl");
+    ga("send", "pageview")
+</script>
+</body>
+</html>

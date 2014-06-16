@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bikeday</title>
+    <meta name="description" content="Pathfinder for Warsaw bikes - Veturilo">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+</head>
+<body>
+
+
+<!-- Start of first page -->
+<div data-role="page" id="search">
+
+    <div data-role="header" data-position="inline" data-add-back-btn="true">
+        <h1>Bikeday</h1>
+        <a href="#map" data-icon="navigation" class="ui-btn-right">Map</a>
+    </div>
+    <!-- /header -->
+
+    <div role="main" class="ui-content">
+        <form class="search-form" action="">
+            <input id="from" name="textinput-hide" placeholder="np. Warszawa Młynarska 7" value="" type="text">
+            <input id="to" name="textinput-hide" placeholder="np. Warszawa Złota 1" value="" type="text">
+            <input id="searchButton" value="Is it a Bike day?" data-icon="search" data-theme="a" type="button">
+        </form>
+        <div class="results" style="display: none;">
+            <h4 class="title">Of course it is!</h4>
+
+            <p>
+                Pick up a bike at<span class="station" id="fromStation"></span><br/>
+                (<span id="fromStationBikes"></span> <img src="img/bike.png" alt="bike"/> available,
+                <span id="toStationDuration"></span> <img src="img/walk.png" alt="bike"/>)
+            </p>
+
+            <p>
+                Leave your bike at<br/>
+                <span class="station" id="toStation"></span><br/>
+                (<span id="toEndDuration"></span> <img src="img/walk.png" alt="bike"/> away from your destination)
+            </p>
+
+            <p>You should reach your destination at <span id="endTime"></span></p>
+
+            <p id="weather"></p>
+
+            <p id="sunsetSunrise"></p>
+        </div>
+    </div>
+    <!-- /content -->
+
+</div>
+<!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="map">
+
+    <div data-role="header" data-position="inline" data-add-back-btn="true">
+        <h1>Bikeday</h1>
+    </div>
+    <!-- /header -->
+
+    <div role="main" class="ui-content" id="map-canvas">
+    </div>
+    <!-- /content -->
+
+</div>
+<!-- /page -->
+</body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+    $(document).ready(function () {
+        var resizeBox = function () {
+            $('#map-canvas').css({height: $(window).height() - 84});
+        };
+        resizeBox();
+        $(window).resize(resizeBox);
+        $("div:jqmData(role='page')").bind('pageshow', function () {
+            google.maps.event.trigger(map, "resize");
+            setMapBoundsToMarkers();
+        });
+        $('#search').on("swipeleft", function (event) {
+            if ($(event.target).is(':visible')) {
+                $.mobile.changePage('#map', {
+                    transition: 'slide'});
+            }
+        });
+    });
+</script>
+<!-- include: "type": "js", "files": "dist/**/*.js" -->
+<script>
+    (function (e, t, n, r, i, s, o) {
+        e["GoogleAnalyticsObject"] = i;
+        e[i] = e[i] || function () {
+            (e[i].q = e[i].q || []).push(arguments)
+        }, e[i].l = 1 * new Date;
+        s = t.createElement(n), o = t.getElementsByTagName(n)[0];
+        s.async = 1;
+        s.src = r;
+        o.parentNode.insertBefore(s, o)
+    })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
+    ga("create", "@@gaCode", "@@siteUrl");
+    ga("send", "pageview")
+</script>
+</html>

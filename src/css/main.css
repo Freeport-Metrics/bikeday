@@ -312,48 +312,5 @@ aside {
     position: absolute;
     top: 0;
     left: 0;
-<<<<<<< HEAD:css/main.css
-    right: 0;
-    z-index: 0;
-}
-
-#content {
-    z-index: 100;
-    position: absolute;
-    width: 320px;
-}
-
-.logo {
-    height: 70px;
-
-}
-
-.station{
-    font-weight: bold;
-}
-
-.labelText{
-    color: gray;
-    font-size: 13px;
-}
-
-div#answerHeader{
-
-}
-
-header .title{
-    font-size:  56px;
-    text-shadow:
-        -1px -1px 0 #eee,
-        1px -1px 0 #eee,
-        -1px 1px 0 #eee,
-        1px 1px 0 #eee;
-}
-
-img.logo{
-    vertical-align: baseline;
-}
-=======
     border: 0;
 }
->>>>>>> 959b09d91ab4f574edc95cb8df0a71f472e87e4b:src/css/main.css

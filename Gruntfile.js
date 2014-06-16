@@ -8,13 +8,13 @@ module.exports = function (grunt) {
           //Fill replacements with your own settings
           patterns: [
             {
-              match: 'repoUrl', replacement: 'https://github.com/janisz/bikeday'
+              match: 'repoUrl', replacement: 'https://github.com/Freeport-Metrics/bikeday'
             },
             {
-              match: 'siteUrl', replacement: 'janisz.github.io'
+              match: 'siteUrl', replacement: ''
             },
             {
-              match: 'gaCode', replacement: 'UA-36386333-2'
+              match: 'gaCode', replacement: ''
             }
           ]
         },

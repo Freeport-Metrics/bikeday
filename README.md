@@ -6,7 +6,7 @@ get to your destination before sunset.
 
 ###Run application
 
-1. Checkout code `git clone https://github.com/janisz/bikeday.git`
+1. Checkout code `git clone https://github.com/Freeport-Metrics/bikeday`
 2. `npm install`
 3. Start app `grunt && grunt server`
 4. Navigate to [http://localhost:8001/index.html](http://localhost:8765/index.html)
